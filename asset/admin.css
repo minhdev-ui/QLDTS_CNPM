@@ -89,3 +89,8 @@ ul {
     color: #000;
     transition: linear .2s;
 }
+
+.table_title {
+    background-color: #FFCC99;
+    border: none !important;
+}
