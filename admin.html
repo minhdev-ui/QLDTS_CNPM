@@ -6,9 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./asset/admin.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./asset/form.css">
     <title>Document</title>
 </head>
 <body>
+    <div id="overlay">
+        <!-- start form -->
+        <div class="container">
+            <form>
+                <h3 class="personal_info">Thông Tin Cá Nhân</h3>
+                <div class="name_input">
+                    <label for="name">Họ Tên</label>
+                    <input type="text" id="name" placeholder="Eg: Nguyễn Văn A">
+                </div>
+                <div class="form_input">
+                    <div class="sbd_input">
+                        <label for="sbd">SBD</label>
+                        <input type="text" id="sbd">
+                    </div>
+                    <div class="gender">
+                        <label for="">Giới Tính</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Nữ
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              Nam
+                            </label>
+                        </div>
+                    </div>
+                    <div class="birthday">
+                        <label for="">Ngày Sinh</label>
+                        <input type="date" class="birthday_input" style="padding: 0;">
+                    </div>
+                </div>
+                <div class="email">
+                    <label for="email">Email (Nếu có)</label>
+                    <input type="email" class="email_input" id="email" placeholder="Eg: example@gmail.com">
+                </div>
+                <div class="form_input">
+                    <div class="province">
+                        <label for="">Tỉnh</label>
+                        <input type="text" class="province-input">
+                    </div>
+                    <div class="city">
+                        <label for="">Thành phố</label>
+                        <input type="text" class="city-input">
+                    </div>
+                    <div class="cmnd">
+                        <label for="cmnd">CMND/CCCD</label>
+                        <input type="text" class="cmnd-input" id="cmnd">
+                    </div>
+                </div>
+                <div class="form_input">
+                    <div class="unit">
+                        <label for="">Khối Thi</label>
+                        <select class="custom-select">
+                            <option selected>--Chọn Khối Thi--</option>
+                            <option value="a01">A01</option>
+                            <option value="a00">A00</option>
+                            <option value="d00">D00</option>
+                        </select>
+                    </div>
+                    <div class="department">
+                        <label for="">Ngành</label>
+                        <select class="custom-select">
+                            <option selected>--Chọn Ngành--</option>
+                            <option value="cntt">Công Nghệ Thông Tin</option>
+                            <option value="ktpm">Kĩ Thuật Phần Mềm</option>
+                            <option value="httt">Hệ Thống Thông Tin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="address">
+                    <label for="address">Địa Chỉ</label>
+                    <input type="text" class="address_input" id="address">
+                </div>
+                <div class="form_input">
+                    <div class="folk">
+                        <label for="folk">Dân Tộc</label>
+                        <input type="text" class="folk-input" id="folk">
+                    </div>
+                    <div class="phone_number">
+                        <label for="phone">SĐT</label>
+                        <input type="text" id="phone" class="phone-input">
+                    </div>
+                </div>
+                <div class="btn_block">
+                    <button class="btn btn-primary add" onclick="off()">Xác nhận</button>
+                    <button class="btn btn-warning reset">Đặt lại</button>
+                </div>
+            </form>
+        </div>
+        <!-- end form -->
+    </div>
      <div class="heading">
          <div class="heading_logo">
             <img src="./img/istockphoto-1197901679-612x612.jpg" class="heading_img">
@@ -35,7 +130,7 @@
          </div>
      </div>
      <div class="content">
-         <button class="btn btn-primary"><i class="fas fa-plus-circle"></i> Thêm Hồ Sơ</button>
+             <button class="btn btn-primary add" onclick=on()><i class="fas fa-plus-circle"></i> Thêm Hồ Sơ</button>
          <table class="student_table table table-bordered">
              <thead>
                  <tr class="table_row">
@@ -91,9 +186,17 @@
              </tbody>
          </table>
      </div>
-     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function on() {
+            document.getElementById('overlay').style.display = "block";
+        }
+        function off() {
+            document.getElementById('overlay').style.display = "none";
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-     <script src="https://kit.fontawesome.com/54f5e9521f.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/54f5e9521f.js" crossorigin="anonymous"></script>
 </body>
 </html>
