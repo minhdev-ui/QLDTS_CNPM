@@ -231,7 +231,7 @@ ul {
     border: none !important;
 }
 
-#overlay {
+#overlay1, #overlay2 {
     position: fixed;
     display: none;
     width: 100%;
