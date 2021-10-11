@@ -291,7 +291,7 @@ const khoi = [
 const student = document.getElementById("student_list");
 const student_list = hssv.map((item, index) => `
     <tr class="table_row">
-        <th scope="row">${index}</th>
+        <th scope="row">${index + 1}</th>
         <td>${item.sbd}</td>
         <td>${item.name}</td>
         <td>${item.sex}</td>
