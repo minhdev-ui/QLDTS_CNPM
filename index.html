@@ -1,44 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./asset/style.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./asset/style.css" />
+    <title>Quản Lý Điểm Tuyển Sinh Đại Học MVC</title>
+  </head>
+  <body>
     <div class="wrapper">
-        <div class="heading">
-            <div class="logo">
-                <h1 class="logo_title">
-                    Quản Lý Điểm Tuyển Sinh Đại Học MVC <i class="fas fa-bookmark"></i>
-                </h1>
-            </div>
+      <div class="heading">
+        <div class="logo">
+          <h1 class="logo_title">
+            Quản Lý Điểm Tuyển Sinh Đại Học MVC <i class="fas fa-bookmark"></i>
+          </h1>
         </div>
-        <div class="container">
-            <div class="form">
-                <div class="left_banner">
-                    <img src="./img/istockphoto-1197901679-612x612.jpg" class="banner_img">
-                </div>
-                <form action="" class="login_form" method="POST">
-                    <span class="heading_form">Đăng Nhập</span>
-                    <label for="username_input">Tên đăng nhập</label>
-                    <input type="text" name="username" id="username_input" class="form_input" placeholder="Tên đăng nhập" required>
-                    <label for="password_input">Mật khẩu</label>
-                    <input type="password" name="password" id="password_input" class="form_input" placeholder="**********" required>
-                    <a href="./admin.html" class="admin-login"><input type="button" class="form_btn" value="Đăng Nhập"></a>
-                    <a href="./admin.html" class="user-login">Truy Cập Với Tư Cách Thí Sinh</a>
-                    <span class="note">(*) Sinh viên đăng nhập tài khoản/mật khẩu bằng mã số báo danh của mình</span>
-                    <span class="note">(*) Điện thoại hỗ trợ: 123.456.7890</span>
-                </form>
-            </div>
+      </div>
+      <div class="container">
+        <div class="form">
+          <div class="left_banner">
+            <img
+              src="./img/istockphoto-1197901679-612x612.jpg"
+              class="banner_img"
+            />
+          </div>
+          <form action="" class="login_form" method="POST">
+            <span class="heading_form">Đăng Nhập</span>
+            <label for="username_input">Tên đăng nhập</label>
+            <input
+              type="text"
+              name="username"
+              id="username_input"
+              class="form_input"
+              placeholder="Tên đăng nhập"
+              required
+            />
+            <label for="password_input">Mật khẩu</label>
+            <input
+              type="password"
+              name="password"
+              id="password_input"
+              class="form_input"
+              placeholder="**********"
+              required
+            />
+            <a href="./view/admin.html" class="admin-login"
+              ><input type="button" class="form_btn" value="Đăng Nhập"
+            /></a>
+            <a href="./view/user.html" class="user-login"
+              >Truy Cập Với Tư Cách Thí Sinh</a
+            >
+            <span class="note"
+              >(*) Sinh viên đăng nhập tài khoản/mật khẩu bằng mã số báo danh
+              của mình</span
+            >
+            <span class="note">(*) Điện thoại hỗ trợ: 123.456.7890</span>
+          </form>
         </div>
+      </div>
     </div>
-    <script src="https://kit.fontawesome.com/54f5e9521f.js" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/54f5e9521f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

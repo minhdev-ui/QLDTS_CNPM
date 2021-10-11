@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
 ul {
     list-style-type: none;
     margin: 0 !important;
@@ -52,6 +56,9 @@ ul {
 }
 
 .heading {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -169,6 +176,7 @@ ul {
     justify-content: flex-start;
     align-items: flex-start;
     margin: 50px;
+    margin-top: 100px;
 }
 
 .student_table {
