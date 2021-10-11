@@ -45,14 +45,21 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 350px;
+    width: 550px;
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 220px;
+    width: 500px;
+}
+
+.nav_link_btn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 .heading {
