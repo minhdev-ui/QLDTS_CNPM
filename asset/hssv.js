@@ -170,9 +170,423 @@ const diem_sv = [
     Diem_2: 8.8,
     Diem_3: 7,
   },
+  {
+    id: "MVC119",
+    sbd: "002",
+    name: "Đỗ Hồng Ngọc",
+    Khoi_thi: "B00",
+    Mon_1: "Toán",
+    Mon_2: "Sinh",
+    Mon_3: "Hóa",
+    Diem_1: 3,
+    Diem_2: 3.5,
+    Diem_3: 3,
+  },
+  {
+    id: "MVC118",
+    sbd: "002",
+    name: "Đỗ Hồng Ngọc",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 3,
+    Diem_2: 3.5,
+    Diem_3: 3.2,
+  },
+  {
+    id: "MVC110",
+    sbd: "003",
+    name: "Hoàng Thị Minh Lan",
+    Khoi_thi: "A01",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Anh",
+    Diem_1: 7,
+    Diem_2: 8.5,
+    Diem_3: 6.4,
+  },
+  {
+    id: "MVC107",
+    sbd: "003",
+    name: "Hoàng Thị Minh Lan",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 7,
+    Diem_2: 9,
+    Diem_3: 8.5,
+  },
+  {
+    id: "MVC105",
+    sbd: "004",
+    name: "Đỗ Minh Hùng",
+    Khoi_thi: "D07",
+    Mon_1: "Toán",
+    Mon_2: "Hóa",
+    Mon_3: "Anh",
+    Diem_1: 8.4,
+    Diem_2: 7,
+    Diem_3: 6,
+  },
+  {
+    id: "MVC106",
+    sbd: "005",
+    name: "Đỗ Ngọc Minh",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 7.2,
+    Diem_2: 8,
+    Diem_3: 7,
+  },
+  {
+    id: "MVC121",
+    sbd: "006",
+    name: "Hoàng Thị May",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 7,
+    Diem_2: 6,
+    Diem_3: 9,
+  },
+  {
+    id: "MVC401",
+    sbd: "007",
+    name: "Tòng Thị Hoàng",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 2.5,
+    Diem_2: 3.4,
+    Diem_3: 4,
+  },
+  {
+    id: "MVC114",
+    sbd: "007",
+    name: "Tòng Thị Hoàng",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 2.5,
+    Diem_2: 3.4,
+    Diem_3: 4,
+  },
+  {
+    id: "MVC120",
+    sbd: "008",
+    name: "Nguyễn Ánh Nguyệt",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 9.2,
+    Diem_2: 8,
+    Diem_3: 8.2,
+  },
+  {
+    id: "MVC402",
+    sbd: "009",
+    name: "Uông Văn Nam",
+    Khoi_thi: "A01",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Anh",
+    Diem_1: 7,
+    Diem_2: 6,
+    Diem_3: 9,
+  },
+  {
+    id: "MVC112",
+    sbd: "009",
+    name: "Uông Văn Nam",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 7,
+    Diem_2: 6,
+    Diem_3: 7,
+  },
+  {
+    id: "MVC123",
+    sbd: "010",
+    name: "Nguyễn Khánh Linh",
+    Khoi_thi: "D07",
+    Mon_1: "Toán",
+    Mon_2: "Hóa",
+    Mon_3: "Anh",
+    Diem_1: 8.4,
+    Diem_2: 6.5,
+    Diem_3: 7,
+  },
+  {
+    id: "MVC105",
+    sbd: "011",
+    name: "Hoàng Hải Long",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 7,
+    Diem_2: 6,
+    Diem_3: 8,
+  },
+  {
+    id: "MVC401",
+    sbd: "012",
+    name: "Ngô Hải Minh",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 5,
+    Diem_2: 7,
+    Diem_3: 5,
+  },
+  {
+    id: "MVC118",
+    sbd: "012",
+    name: "Ngô Hải Minh",
+    Khoi_thi: "D08",
+    Mon_1: "Toán",
+    Mon_2: "Sinh",
+    Mon_3: "Anh",
+    Diem_1: 7,
+    Diem_2: 3.5,
+    Diem_3: 5,
+  },
 ];
 
-const student_table = document.getElementById("student_table");
+const student_pass = [
+  {
+    id: "MVC106",
+    sbd: "001",
+    name: "Ngô Thị Hồng Nhung",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 9,
+    Diem_2: 8.8,
+    Diem_3: 7,
+  },
+  {
+    id: "MVC401",
+    sbd: "001",
+    name: "Ngô Thị Hồng Nhung",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 9,
+    Diem_2: 8.8,
+    Diem_3: 7,
+  },
+  {
+    id: "MVC110",
+    sbd: "003",
+    name: "Hoàng Thị Minh Lan",
+    Khoi_thi: "A01",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Anh",
+    Diem_1: 7,
+    Diem_2: 8.5,
+    Diem_3: 6.4,
+  },
+  {
+    id: "MVC107",
+    sbd: "003",
+    name: "Hoàng Thị Minh Lan",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 7,
+    Diem_2: 9,
+    Diem_3: 8.5,
+  },
+  {
+    id: "MVC105",
+    sbd: "004",
+    name: "Đỗ Minh Hùng",
+    Khoi_thi: "D07",
+    Mon_1: "Toán",
+    Mon_2: "Hóa",
+    Mon_3: "Anh",
+    Diem_1: 8.4,
+    Diem_2: 7,
+    Diem_3: 6,
+  },
+  {
+    id: "MVC106",
+    sbd: "005",
+    name: "Đỗ Ngọc Minh",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 7.2,
+    Diem_2: 8,
+    Diem_3: 7,
+  },
+  {
+    id: "MVC121",
+    sbd: "006",
+    name: "Hoàng Thị May",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 7,
+    Diem_2: 6,
+    Diem_3: 9,
+  },
+  {
+    id: "MVC401",
+    sbd: "007",
+    name: "Tòng Thị Hoàng",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 2.5,
+    Diem_2: 3.4,
+    Diem_3: 4,
+  },
+  {
+    id: "MVC114",
+    sbd: "007",
+    name: "Tòng Thị Hoàng",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 2.5,
+    Diem_2: 3.4,
+    Diem_3: 4,
+  },
+  {
+    id: "MVC120",
+    sbd: "008",
+    name: "Nguyễn Ánh Nguyệt",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 9.2,
+    Diem_2: 8,
+    Diem_3: 8.2,
+  },
+  {
+    id: "MVC402",
+    sbd: "009",
+    name: "Uông Văn Nam",
+    Khoi_thi: "A01",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Anh",
+    Diem_1: 7,
+    Diem_2: 6,
+    Diem_3: 9,
+  },
+  {
+    id: "MVC112",
+    sbd: "009",
+    name: "Uông Văn Nam",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 7,
+    Diem_2: 6,
+    Diem_3: 7,
+  },
+  {
+    id: "MVC123",
+    sbd: "010",
+    name: "Nguyễn Khánh Linh",
+    Khoi_thi: "D07",
+    Mon_1: "Toán",
+    Mon_2: "Hóa",
+    Mon_3: "Anh",
+    Diem_1: 8.4,
+    Diem_2: 6.5,
+    Diem_3: 7,
+  },
+  {
+    id: "MVC105",
+    sbd: "011",
+    name: "Hoàng Hải Long",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 7,
+    Diem_2: 6,
+    Diem_3: 8,
+  },
+];
+
+const student_nopass = [
+  {
+    id: "MVC119",
+    sbd: "002",
+    name: "Đỗ Hồng Ngọc",
+    Khoi_thi: "B00",
+    Mon_1: "Toán",
+    Mon_2: "Sinh",
+    Mon_3: "Hóa",
+    Diem_1: 3,
+    Diem_2: 3.5,
+    Diem_3: 3,
+  },
+  {
+    id: "MVC118",
+    sbd: "002",
+    name: "Đỗ Hồng Ngọc",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 3,
+    Diem_2: 3.5,
+    Diem_3: 3.2,
+  },
+  {
+    id: "MVC401",
+    sbd: "012",
+    name: "Ngô Hải Minh",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 5,
+    Diem_2: 7,
+    Diem_3: 5,
+  },
+  {
+    id: "MVC118",
+    sbd: "012",
+    name: "Ngô Hải Minh",
+    Khoi_thi: "D08",
+    Mon_1: "Toán",
+    Mon_2: "Sinh",
+    Mon_3: "Anh",
+    Diem_1: 7,
+    Diem_2: 3.5,
+    Diem_3: 5,
+  },
+];
+
+const student_table = document.getElementById("content");
 
 const student = hssv
   .map(
@@ -192,9 +606,16 @@ const student = hssv
     </tr>
     `
   )
-  .join();
+  .join("");
+
+const add_button = `
+<button class="btn btn-primary add" onclick="on_form()">
+  <i class="fas fa-plus-circle"></i> Thêm Hồ Sơ
+</button>
+`;
 
 const student_list = `
+    ${add_button}
     <table class="student_table table table-bordered" id="student_table">
     <thead>
       <tr class="table_row">
@@ -211,7 +632,7 @@ const student_list = `
         ${student}
     </tbody>
     </table>
-    `;
+`;
 
 const mark = diem_sv
   .map(
@@ -227,7 +648,7 @@ const mark = diem_sv
     </tr>
 `
   )
-  .join();
+  .join("");
 
 const mark_list = `
 <table class="table mt-6" id="nofication">
@@ -247,12 +668,91 @@ const mark_list = `
 </tbody>
 </table>
 `;
+
+const pass = student_pass
+  .map(
+    (diem) => `
+    <tr class="table_row">
+        <td>${diem.sbd}</td>
+        <td>${diem.name}</td>
+        <td>${diem.id}</td>
+        <td>${diem.Khoi_thi}</td>
+        <td>${diem.Diem_1}</td>
+        <td>${diem.Diem_2}</td>
+        <td>${diem.Diem_3}</td>
+    </tr>
+`
+  )
+  .join("");
+
+const pass_list = `
+<table class="table mt-6" id="nofication">
+<thead>
+<tr>
+    <th scope="col">SBD</th>
+    <th scope="col">Họ Tên</th>
+    <th scope="col">Ngành</th>
+    <th scope="col">Khối</th>
+    <th scope="col">Điểm Môn 1</th>
+    <th scope="col">Điểm Môn 2</th>
+    <th scope="col">Điểm Môn 3</th>
+</tr>
+</thead>
+<tbody>
+    ${pass}
+</tbody>
+</table>
+`;
+
+const nopass = student_nopass
+  .map(
+    (diem) => `
+    <tr class="table_row">
+        <td>${diem.sbd}</td>
+        <td>${diem.name}</td>
+        <td>${diem.id}</td>
+        <td>${diem.Khoi_thi}</td>
+        <td>${diem.Diem_1}</td>
+        <td>${diem.Diem_2}</td>
+        <td>${diem.Diem_3}</td>
+    </tr>
+`
+  )
+  .join("");
+
+const nopass_list = `
+<table class="table mt-6" id="nofication">
+<thead>
+<tr>
+    <th scope="col">SBD</th>
+    <th scope="col">Họ Tên</th>
+    <th scope="col">Ngành</th>
+    <th scope="col">Khối</th>
+    <th scope="col">Điểm Môn 1</th>
+    <th scope="col">Điểm Môn 2</th>
+    <th scope="col">Điểm Môn 3</th>
+</tr>
+</thead>
+<tbody>
+    ${nopass}
+</tbody>
+</table>
+`;
+
 function on_mark_list() {
-    student_table.innerHTML = mark_list
+  student_table.innerHTML = mark_list;
 }
 
 function on_student_list() {
-    student_table.innerHTML = student_list;
+  student_table.innerHTML = student_list;
 }
-student_table.innerHTML = student_list;
 
+function on_pass_list() {
+  student_table.innerHTML = pass_list;
+}
+
+function on_nopass_list() {
+  student_table.innerHTML = nopass_list;
+}
+
+student_table.innerHTML = student_list;
