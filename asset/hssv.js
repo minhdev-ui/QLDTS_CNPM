@@ -686,6 +686,10 @@ const pass = student_pass
   .join("");
 
 const pass_list = `
+<div class="input-group mb-3" style="width: 300px;">
+<input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
+<button class="btn btn-primary">Tra Cứu</button>
+</div>
 <table class="table mt-6" id="nofication">
 <thead>
 <tr>
@@ -721,6 +725,10 @@ const nopass = student_nopass
   .join("");
 
 const nopass_list = `
+<div class="input-group mb-3" style="width: 300px;">
+  <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
+  <button class="btn btn-primary">Tra Cứu</button>
+</div>
 <table class="table mt-6" id="nofication">
 <thead>
 <tr>
@@ -749,10 +757,104 @@ function on_student_list() {
 
 function on_pass_list() {
   student_table.innerHTML = pass_list;
+  const nganhInput = document.getElementById("search_nganh");
+  nganhInput.onchange = () => {
+    if (nganhInput.value == "") {
+      return;
+    } else {
+      var ps = student_pass
+        .map((item) => {
+          if (item.id == nganhInput.value) {
+            return `
+          <tr class="table_row">
+          <td>${item.sbd}</td>
+          <td>${item.name}</td>
+          <td>${item.id}</td>
+          <td>${item.Khoi_thi}</td>
+          <td>${item.Diem_1}</td>
+          <td>${item.Diem_2}</td>
+          <td>${item.Diem_3}</td>
+          </tr>
+          `;
+          }
+        })
+        .join("");
+      const pass_list_search = `
+<div class="input-group mb-3" style="width: 300px;">
+<input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
+<button class="btn btn-primary">Tra Cứu</button>
+</div>
+<table class="table mt-6" id="nofication">
+<thead>
+<tr>
+    <th scope="col">SBD</th>
+    <th scope="col">Họ Tên</th>
+    <th scope="col">Ngành</th>
+    <th scope="col">Khối</th>
+    <th scope="col">Điểm Môn 1</th>
+    <th scope="col">Điểm Môn 2</th>
+    <th scope="col">Điểm Môn 3</th>
+</tr>
+</thead>
+<tbody>
+    ${ps}
+</tbody>
+</table>
+`;
+      student_table.innerHTML = pass_list_search;
+    }
+  };
 }
 
 function on_nopass_list() {
   student_table.innerHTML = nopass_list;
+  const nganhInput = document.getElementById("search_nganh");
+  nganhInput.onchange = () => {
+    if (nganhInput.value == "") {
+      return;
+    } else {
+      var ps = student_nopass
+        .map((item) => {
+          if (item.id == nganhInput.value) {
+            return `
+          <tr class="table_row">
+          <td>${item.sbd}</td>
+          <td>${item.name}</td>
+          <td>${item.id}</td>
+          <td>${item.Khoi_thi}</td>
+          <td>${item.Diem_1}</td>
+          <td>${item.Diem_2}</td>
+          <td>${item.Diem_3}</td>
+          </tr>
+          `;
+          }
+        })
+        .join("");
+      const pass_list_search = `
+<div class="input-group mb-3" style="width: 300px;">
+<input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
+<button class="btn btn-primary">Tra Cứu</button>
+</div>
+<table class="table mt-6" id="nofication">
+<thead>
+<tr>
+    <th scope="col">SBD</th>
+    <th scope="col">Họ Tên</th>
+    <th scope="col">Ngành</th>
+    <th scope="col">Khối</th>
+    <th scope="col">Điểm Môn 1</th>
+    <th scope="col">Điểm Môn 2</th>
+    <th scope="col">Điểm Môn 3</th>
+</tr>
+</thead>
+<tbody>
+    ${ps}
+</tbody>
+</table>
+`;
+      student_table.innerHTML = pass_list_search;
+    }
+  };
 }
 
 student_table.innerHTML = student_list;
