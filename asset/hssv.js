@@ -587,52 +587,54 @@ const student_nopass = [
 ];
 
 const student_table = document.getElementById("content");
-
-const student = hssv
-  .map(
-    (item, index) => `
-<tr class="table_row">
-<th scope="row">${index + 1}</th>
-        <td>${item.sbd}</td>
-        <td>${item.name}</td>
-        <td>${item.sex}</td>
-        <td>${item.date}</td>
-        <td>${item.phone}</td>
-        <td>
-        <button class="btn btn-warning px-4">Chi Tiết</button>
-        <button class="btn btn-primary px-4">Sửa</button>
-        <button class="btn btn-danger px-4">Xóa</button>
-        </td>
-    </tr>
-    `
-  )
-  .join("");
-
-const add_button = `
-<button class="btn btn-primary add" onclick="on_form()">
-  <i class="fas fa-plus-circle"></i> Thêm Hồ Sơ
-</button>
-`;
-
-const student_list = `
-    ${add_button}
-    <table class="student_table table table-bordered" id="student_table">
-    <thead>
-      <tr class="table_row">
-        <th scope="col" class="table_title">STT</th>
-        <th scope="col" class="table_title">SBD</th>
-        <th scope="col" class="table_title">Họ Tên</th>
-        <th scope="col" class="table_title">Giới Tính</th>
-        <th scope="col" class="table_title">Ngày Sinh</th>
-        <th scope="col" class="table_title">SĐT</th>
-        <th scope="col" class="table_title">Công cụ</th>
+function render_student_list() {
+  const student = hssv
+    .map(
+      (item, index) => `
+  <tr class="table_row">
+  <th scope="row">${index + 1}</th>
+          <td>${item.sbd}</td>
+          <td>${item.name}</td>
+          <td>${item.sex}</td>
+          <td>${item.date}</td>
+          <td>${item.phone}</td>
+          <td>
+          <button class="btn btn-warning px-4">Chi Tiết</button>
+          <button class="btn btn-primary px-4">Sửa</button>
+          <button class="btn btn-danger px-4">Xóa</button>
+          </td>
       </tr>
-    </thead>
-    <tbody  id="student_list">
-        ${student}
-    </tbody>
-    </table>
-`;
+      `
+    )
+    .join("");
+
+  const add_button = `
+  <button class="btn btn-primary add" onclick="on_form()">
+    <i class="fas fa-plus-circle"></i> Thêm Hồ Sơ
+  </button>
+  `;
+
+  const student_list = `
+      ${add_button}
+      <table class="student_table table table-bordered" id="student_table">
+      <thead>
+        <tr class="table_row">
+          <th scope="col" class="table_title">STT</th>
+          <th scope="col" class="table_title">SBD</th>
+          <th scope="col" class="table_title">Họ Tên</th>
+          <th scope="col" class="table_title">Giới Tính</th>
+          <th scope="col" class="table_title">Ngày Sinh</th>
+          <th scope="col" class="table_title">SĐT</th>
+          <th scope="col" class="table_title">Công cụ</th>
+        </tr>
+      </thead>
+      <tbody  id="student_list">
+          ${student}
+      </tbody>
+      </table>
+  `;
+  student_table.innerHTML = student_list;
+}
 
 const mark = diem_sv
   .map(
@@ -752,7 +754,7 @@ function on_mark_list() {
 }
 
 function on_student_list() {
-  student_table.innerHTML = student_list;
+  render_student_list();
 }
 
 function on_pass_list() {
@@ -780,27 +782,28 @@ function on_pass_list() {
         })
         .join("");
       const pass_list_search = `
-<div class="input-group mb-3" style="width: 300px;">
-<input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
-<button class="btn btn-primary">Tra Cứu</button>
-</div>
-<table class="table mt-6" id="nofication">
-<thead>
-<tr>
-    <th scope="col">SBD</th>
-    <th scope="col">Họ Tên</th>
-    <th scope="col">Ngành</th>
-    <th scope="col">Khối</th>
-    <th scope="col">Điểm Môn 1</th>
-    <th scope="col">Điểm Môn 2</th>
-    <th scope="col">Điểm Môn 3</th>
-</tr>
-</thead>
-<tbody>
-    ${ps}
-</tbody>
-</table>
-`;
+      <div class="input-group mb-3" style="width: 300px;">
+        <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
+        <button class="btn btn-primary">Tra Cứu</button>
+        <button class="btn btn-primary">In Bảng Điểm</button>
+        </div>
+      <table class="table mt-6" id="nofication">
+      <thead>
+      <tr>
+          <th scope="col">SBD</th>
+          <th scope="col">Họ Tên</th>
+          <th scope="col">Ngành</th>
+          <th scope="col">Khối</th>
+          <th scope="col">Điểm Môn 1</th>
+          <th scope="col">Điểm Môn 2</th>
+          <th scope="col">Điểm Môn 3</th>
+      </tr>
+      </thead>
+      <tbody>
+          ${ps}
+      </tbody>
+      </table>
+      `;
       student_table.innerHTML = pass_list_search;
     }
   };
@@ -835,6 +838,7 @@ function on_nopass_list() {
 <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
 <button class="btn btn-primary">Tra Cứu</button>
 </div>
+<button type="submit" class="btn btn-primary">Submit</button>
 <table class="table mt-6" id="nofication">
 <thead>
 <tr>
@@ -857,4 +861,71 @@ function on_nopass_list() {
   };
 }
 
-student_table.innerHTML = student_list;
+var form = {};
+
+function findSelection() {
+  var radio = $('input[name="gender"]');
+  for (var i = 0; i < radio.length; i++) {
+    if (radio[i].checked == true) {
+      return radio[i].value;
+    }
+  }
+}
+
+function findcheck() {
+  var folk_option = document.getElementsByClassName("folk_item");
+  for (var i = 0; i < folk_option.length; i++) {
+    if (folk_option[i].selected) {
+      return folk_option[i].value;
+    }
+  }
+}
+
+function reset() {
+  var input = document.querySelectorAll("input");
+  for (var i = 0; i < input.length; i++) {
+    input[i].value = "";
+  }
+}
+
+var name_input = document.getElementById("name");
+name_input.onchange = () => {
+  form["name"] = name_input.value;
+};
+
+var sbd_input = document.getElementById("sbd");
+sbd_input.onchange = () => {
+  form["sbd"] = sbd_input.value;
+};
+
+var date_input = document.getElementById("date");
+date_input.onchange = () => {
+  form["date"] = date_input.value;
+};
+
+var phone_input = document.getElementById("phone");
+phone_input.onchange = () => {
+  form["phone"] = phone_input.value;
+};
+
+function submitForm() {
+  form["sex"] = findSelection();
+  form["folk"] = findcheck();
+  console.log(form);
+}
+
+$(".add").click(function (event) {
+  event.preventDefault();
+  submitForm();
+  hssv.push(form);
+  render_student_list();
+  reset();
+  off_form();
+});
+
+$(".reset").click(function (event) {
+  event.preventDefault();
+  reset();
+});
+
+render_student_list();

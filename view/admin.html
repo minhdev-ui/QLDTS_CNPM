@@ -28,12 +28,18 @@
     <div id="overlay1">
       <!-- start form -->
       <div class="container">
-        <form>
+        <form id="myform">
           <h3 class="personal_info">Thông Tin Cá Nhân</h3>
           <div class="form_input">
             <div class="name_input">
               <label for="name">Họ Tên</label>
-              <input type="text" id="name" placeholder="Eg: Nguyễn Văn A" />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Eg: Nguyễn Văn A"
+                value=""
+              />
             </div>
             <div class="gender">
               <label for="">Giới Tính</label>
@@ -41,21 +47,19 @@
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="exampleRadios"
+                  name="gender"
                   id="exampleRadios2"
-                  value="option2"
+                  value="Nữ"
                 />
                 <label class="form-check-label" for="exampleRadios2">
                   Nữ
                 </label>
-              </div>
-              <div class="form-check">
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="exampleRadios"
+                  name="gender"
                   id="exampleRadios1"
-                  value="option1"
+                  value="Nam"
                   checked
                 />
                 <label class="form-check-label" for="exampleRadios1">
@@ -67,7 +71,7 @@
           <div class="form_input">
             <div class="sbd_input">
               <label for="sbd">SBD</label>
-              <input type="text" id="sbd" />
+              <input type="text" id="sbd" value=""/>
             </div>
             <div class="folk">
               <label for="folk">Dân Tộc</label>
@@ -77,7 +81,7 @@
             </div>
             <div class="birthday">
               <label for="">Ngày Sinh</label>
-              <input type="date" class="birthday_input" style="padding: 0" />
+              <input type="datepicker" id="date" class="birthday_input" style="padding: 0" />
             </div>
           </div>
           <div class="email">
@@ -130,7 +134,7 @@
             <input type="text" class="address_input" id="address" />
           </div>
           <div class="btn_block">
-            <button class="btn btn-primary add" onclick="off_form()">
+            <button class="btn btn-primary add">
               Xác nhận
             </button>
             <button class="btn btn-warning reset">Đặt lại</button>
@@ -229,7 +233,7 @@
           <ul class="subnav_list">
             <li class="subnav_list-item setting">
               <img
-                src="./img/setting.png"
+                src="../img/setting.png"
                 class="setting-icon"
                 style="width: 20px"
               />
@@ -241,7 +245,7 @@
                 style="color: #000; text-decoration: none"
               >
                 <img
-                  src="./img/logout.png"
+                  src="../img/logout.png"
                   class="logout-icon"
                   style="width: 20px"
                 />
@@ -271,6 +275,11 @@
     ></script>
     <script
       src="https://kit.fontawesome.com/54f5e9521f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
     <script src="../asset/form.js"></script>

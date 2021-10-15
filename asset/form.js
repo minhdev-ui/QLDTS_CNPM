@@ -145,7 +145,7 @@ const unit = document.getElementById("unit_list");
 const folk_list = dan_toc
   .map(
     (item) => `
-    <option value="${item.id}">${item.name}</option>
+    <option value="${item.id}" class="folk_item">${item.name}</option>
 `
   )
   .join();
@@ -156,3 +156,14 @@ const unit_list = khoi.map(
 `
 );
 unit.innerHTML += unit_list;
+
+function on_form() {
+  document.getElementById("overlay1").style.display = "block";
+}
+function off_form() {
+  document.getElementById("overlay1").style.display = "none";
+}
+
+// add controller
+
+
