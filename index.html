@@ -34,7 +34,7 @@
               class="banner_img"
             />
           </div>
-          <form action="" class="login_form" method="POST">
+          <form action="" class="login_form" id="myForm" role="form" name="login_form" onsubmit="onFormSubmit()">
             <span class="heading_form">Đăng Nhập</span>
             <label for="username_input">Tên đăng nhập</label>
             <input
@@ -54,9 +54,7 @@
               placeholder="**********"
               required
             />
-            <a href="./view/admin.html" class="admin-login"
-              ><input type="button" class="form_btn" value="Đăng Nhập"
-            /></a>
+          <input type="submit" class="form_btn" value="Đăng Nhập" onclick="submit()"/>
             <a href="./view/user.html" class="user-login"
               >Truy Cập Với Tư Cách Thí Sinh</a
             >
@@ -73,5 +71,6 @@
       src="https://kit.fontawesome.com/54f5e9521f.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./asset/account.js"></script>
   </body>
 </html>

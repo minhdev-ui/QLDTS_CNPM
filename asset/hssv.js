@@ -928,6 +928,7 @@ $(".add").click(function (event) {
   event.preventDefault();
   submitForm();
   hssv.push(form);
+  alert_success('Thêm Hồ Sơ Thành Công');
   render_student_list();
   reset();
   off_form();
@@ -937,5 +938,9 @@ $(".reset").click(function (event) {
   event.preventDefault();
   reset();
 });
+
+function alert_success(message) {
+  alert(message);
+}
 
 render_student_list();
