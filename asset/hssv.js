@@ -688,9 +688,15 @@ const pass = student_pass
   .join("");
 
 const pass_list = `
-<div class="input-group mb-3" style="width: 300px;">
-<input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
-<button class="btn btn-primary">Tra Cứu</button>
+<div style="display: flex; justify-content: space-between; width: 100%">
+  <div class="input-group mb-3" style="width: 300px;">
+  <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
+  <button class="btn btn-primary">Tra Cứu</button>
+  </div>
+  <button class="btn" onclick="window.print()" style="height: 38px">
+    <i class="fas fa-print"></i>
+    In Bảng Điểm
+  </button>
 </div>
 <table class="table mt-6" id="nofication">
 <thead>
@@ -727,9 +733,15 @@ const nopass = student_nopass
   .join("");
 
 const nopass_list = `
-<div class="input-group mb-3" style="width: 300px;">
+<div style="display: flex; justify-content: space-between; width: 100%">
+  <div class="input-group mb-3" style="width: 300px;">
   <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
   <button class="btn btn-primary">Tra Cứu</button>
+  </div>
+  <button class="btn" onclick="window.print()" style="height: 38px">
+    <i class="fas fa-print"></i>
+    In Bảng Điểm
+  </button>
 </div>
 <table class="table mt-6" id="nofication">
 <thead>
@@ -785,8 +797,7 @@ function on_pass_list() {
       <div class="input-group mb-3" style="width: 300px;">
         <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
         <button class="btn btn-primary">Tra Cứu</button>
-        <button class="btn btn-primary">In Bảng Điểm</button>
-        </div>
+      </div>
       <table class="table mt-6" id="nofication">
       <thead>
       <tr>
@@ -838,7 +849,6 @@ function on_nopass_list() {
 <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
 <button class="btn btn-primary">Tra Cứu</button>
 </div>
-<button type="submit" class="btn btn-primary">Submit</button>
 <table class="table mt-6" id="nofication">
 <thead>
 <tr>
