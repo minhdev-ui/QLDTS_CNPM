@@ -604,6 +604,147 @@ const student_nopass = [
   },
 ];
 
+const nganh = [
+  {
+    id: 'MVC101',
+    name: 'Kỹ thuật xây dựng CT thủy',
+    target: 100,
+    benchmark: 15,
+  },
+  {
+    id: 'MVC102',
+    name: 'Kỹ thuật tài nguyên nước',
+    target: 60,
+    benchmark: 15.45,
+  },
+  {
+    id: 'MVC103',
+    name: 'Thuỷ văn học',
+    target: 40,
+    benchmark: 16.1,
+  },
+  {
+    id: 'MVC104',
+    name: 'Kỹ thuật xây dựng',
+    target: 140,
+    benchmark: 15,
+  },
+  {
+    id: 'MVC105',
+    name: 'Nhóm ngành kỹ thuật cơ khí',
+    target: 210,
+    benchmark: 16.25,
+  },
+  {
+    id: 'MVC106',
+    name: 'Nhóm ngành CNTT',
+    target: 500,
+    benchmark: 22.75,
+  },
+  {
+    id: 'MVC107',
+    name: 'Kỹ thuật cấp thoát nước',
+    target: 50,
+    benchmark: 15.1,
+  },
+  {
+    id: 'MVC109',
+    name: 'Kỹ thuật môi trường',
+    target: 60,
+    benchmark: 15.1,
+  },
+  {
+    id: 'MVC110',
+    name: 'Kỹ thuật cơ sở hạ tầng',
+    target: 50,
+    benchmark: 15.1,
+  },
+  {
+    id: 'MVC111',
+    name: 'Công nghệ kỹ thuật xây dựng',
+    target: 70,
+    benchmark: 15.15,
+  },
+  {
+    id: 'MVC112',
+    name: 'Kỹ thuận điện',
+    target: 140,
+    benchmark: 16,
+  },
+  {
+    id: 'MVC113',
+    name: 'Kỹ thuật XDCT giao thông',
+    target: 60,
+    benchmark: 15.25,
+  },
+  {
+    id: 'MVC114',
+    name: 'Quản lý xây dựng',
+    target: 110,
+    benchmark: 16.05,
+  },
+  {
+    id: 'MVC118',
+    name: 'Kỹ thuật hoá học',
+    target: 50,
+    benchmark: 16,
+  },
+  {
+    id: 'MVC119',
+    name: 'Công nghệ sinh học',
+    target: 50,
+    benchmark: 18.5,
+  },
+  {
+    id: 'MVC120',
+    name: 'Kỹ thuật cơ điện tử',
+    target: 180,
+    benchmark: 18.5,
+  },
+  {
+    id: 'MVC121',
+    name: 'Kỹ thuật điều khiển và TĐH',
+    target: 200,
+    benchmark: 20.1,
+  },
+  {
+    id: 'MVC123',
+    name: 'Kỹ thật ô tô',
+    target: 210,
+    benchmark: 21.15,
+  },
+  {
+    id: 'MVC201',
+    name: 'CTTT Kỹ thuật xây dựng',
+    target: 30,
+    benchmark: 15.5,
+  },
+  {
+    id: 'MVC202',
+    name: 'CTTT Kỹ thuật tài nguyên nước',
+    target: 30,
+    benchmark: 18.5,
+  },
+  {
+    id: 'MVC401',
+    name: 'Kinh tế',
+    target: 180,
+    benchmark: 21.05,
+  },
+  {
+    id: 'MVC402',
+    name: 'Quản trị kinh doanh',
+    target: 210,
+    benchmark: 22.05,
+  },
+  {
+    id: 'MVC403',
+    name: 'Kế toán',
+    target: 270,
+    benchmark: 21.7,
+  },
+];
+
 const student_table = document.getElementById("content");
 function render_student_list() {
   const student = hssv
@@ -893,6 +1034,37 @@ function on_nopass_list() {
   };
 }
 
+function on_benchmark_list() {
+  var ps = nganh.map(item => `
+    <tr class="table_row">
+    <td>${item.id}</td>
+    <td>${item.name}</td>
+    <td>${item.target}</td>
+    <td>${item.benchmark}</td>
+    </tr>
+  `).join('');
+  const benchmark_list = `
+  <table class="table mt-6" id="nofication">
+  <thead>
+  <tr>
+      <th scope="col">Mã Ngành</th>
+      <th scope="col">Tên Ngành</th>
+      <th scope="col">Chỉ tiêu</th>
+      <th scope="col">Điểm chuẩn</th>
+  </tr>
+  </thead>
+  <tbody>
+      ${ps}
+  </tbody>
+  </table>
+  `
+  student_table.innerHTML = benchmark_list
+}
+
+
+
+
+
 var form = {};
 
 function findSelection() {
@@ -956,14 +1128,6 @@ $(".add").click(function (event) {
   off_form();
 });
 
-$(".add_bench").click(function (event) {
-  event.preventDefault();
-  submitForm();
-  alert_success('Thêm Điểm Chuẩn Thành Công');
-  reset();
-  off_benchmark();
-});
-
 $(".reset").click(function (event) {
   event.preventDefault();
   reset();
@@ -972,11 +1136,6 @@ $(".reset").click(function (event) {
 $(".exit").click(function (event) {
   event.preventDefault();
   off_form();
-})
-
-$(".exit_bench").click(function (event) {
-  event.preventDefault();
-  off_benchmark();
 })
 
 function alert_success(message) {
