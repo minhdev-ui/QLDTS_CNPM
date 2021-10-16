@@ -265,3 +265,7 @@ ul {
     display: block !important;
     animation: subnav_effect linear .2s;
 }
+
+.exit {
+    margin-left: 10px;
+}

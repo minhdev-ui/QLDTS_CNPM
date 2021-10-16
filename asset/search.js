@@ -10,6 +10,7 @@ const diem_sv = [
     Diem_1: 9,
     Diem_2: 8.8,
     Diem_3: 7,
+    ex_mark: 0.25,
   },
   {
     id: "MVC401",
@@ -22,6 +23,7 @@ const diem_sv = [
     Diem_1: 9,
     Diem_2: 8.8,
     Diem_3: 7,
+    ex_mark: 0.25,
   },
   {
     id: "MVC119",
@@ -33,6 +35,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 3,
     Diem_2: 3.5,
+    ex_mark: 0.5,
     Diem_3: 3,
   },
   {
@@ -45,6 +48,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 3,
     Diem_2: 3.5,
+    ex_mark: 0.5,
     Diem_3: 3.2,
   },
   {
@@ -57,6 +61,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 7,
     Diem_2: 8.5,
+    ex_mark: 2,
     Diem_3: 6.4,
   },
   {
@@ -69,6 +74,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 7,
     Diem_2: 9,
+    ex_mark: 2,
     Diem_3: 8.5,
   },
   {
@@ -81,6 +87,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 8.4,
     Diem_2: 7,
+    ex_mark: 2.75,
     Diem_3: 6,
   },
   {
@@ -93,6 +100,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 7.2,
     Diem_2: 8,
+    ex_mark: 0.25,
     Diem_3: 7,
   },
   {
@@ -105,6 +113,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 7,
     Diem_2: 6,
+    ex_mark: 2.75,
     Diem_3: 9,
   },
   {
@@ -117,6 +126,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 2.5,
     Diem_2: 3.4,
+    ex_mark: 1.75,
     Diem_3: 4,
   },
   {
@@ -129,6 +139,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 2.5,
     Diem_2: 3.4,
+    ex_mark: 1.75,
     Diem_3: 4,
   },
   {
@@ -142,6 +153,7 @@ const diem_sv = [
     Diem_1: 9.2,
     Diem_2: 8,
     Diem_3: 8.2,
+    ex_mark: 1.75,
   },
   {
     id: "MVC402",
@@ -153,6 +165,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 7,
     Diem_2: 6,
+    ex_mark: 1.5,
     Diem_3: 9,
   },
   {
@@ -165,6 +178,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 7,
     Diem_2: 6,
+    ex_mark: 1.5,
     Diem_3: 7,
   },
   {
@@ -177,6 +191,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 8.4,
     Diem_2: 6.5,
+    ex_mark: 0,
     Diem_3: 7,
   },
   {
@@ -189,6 +204,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 7,
     Diem_2: 6,
+    ex_mark: 1.75,
     Diem_3: 8,
   },
   {
@@ -201,6 +217,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 5,
     Diem_2: 7,
+    ex_mark: 0.25,
     Diem_3: 5,
   },
   {
@@ -213,6 +230,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 7,
     Diem_2: 3.5,
+    ex_mark: 0.25,
     Diem_3: 5,
   },
 ];
@@ -232,6 +250,8 @@ search_sbd.onchange = () => {
             <td>${item.Diem_1}</td>
             <td>${item.Diem_2}</td>
             <td>${item.Diem_3}</td>
+            <td>${item.ex_mark}</td>
+            <td>${item.Diem_1 + item.Diem_2 + item.Diem_3 + item.ex_mark}</td>
             </tr>
             `;
       }

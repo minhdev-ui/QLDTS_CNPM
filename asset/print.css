@@ -1,0 +1,3 @@
+@media print {
+    #head, #nav {display: none !important;}
+}

@@ -157,6 +157,7 @@ const diem_sv = [
     Diem_1: 9,
     Diem_2: 8.8,
     Diem_3: 7,
+    ex_mark: 0.25,
   },
   {
     id: "MVC401",
@@ -169,6 +170,7 @@ const diem_sv = [
     Diem_1: 9,
     Diem_2: 8.8,
     Diem_3: 7,
+    ex_mark: 0.25,
   },
   {
     id: "MVC119",
@@ -180,6 +182,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 3,
     Diem_2: 3.5,
+    ex_mark: 0.5,
     Diem_3: 3,
   },
   {
@@ -192,6 +195,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 3,
     Diem_2: 3.5,
+    ex_mark: 0.5,
     Diem_3: 3.2,
   },
   {
@@ -204,6 +208,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 7,
     Diem_2: 8.5,
+    ex_mark: 2,
     Diem_3: 6.4,
   },
   {
@@ -216,6 +221,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 7,
     Diem_2: 9,
+    ex_mark: 2,
     Diem_3: 8.5,
   },
   {
@@ -228,6 +234,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 8.4,
     Diem_2: 7,
+    ex_mark: 2.75,
     Diem_3: 6,
   },
   {
@@ -240,6 +247,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 7.2,
     Diem_2: 8,
+    ex_mark: 0.25,
     Diem_3: 7,
   },
   {
@@ -252,6 +260,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 7,
     Diem_2: 6,
+    ex_mark: 2.75,
     Diem_3: 9,
   },
   {
@@ -264,6 +273,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 2.5,
     Diem_2: 3.4,
+    ex_mark: 1.75,
     Diem_3: 4,
   },
   {
@@ -276,6 +286,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 2.5,
     Diem_2: 3.4,
+    ex_mark: 1.75,
     Diem_3: 4,
   },
   {
@@ -289,6 +300,7 @@ const diem_sv = [
     Diem_1: 9.2,
     Diem_2: 8,
     Diem_3: 8.2,
+    ex_mark: 1.75,
   },
   {
     id: "MVC402",
@@ -300,6 +312,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 7,
     Diem_2: 6,
+    ex_mark: 1.5,
     Diem_3: 9,
   },
   {
@@ -312,6 +325,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 7,
     Diem_2: 6,
+    ex_mark: 1.5,
     Diem_3: 7,
   },
   {
@@ -324,6 +338,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 8.4,
     Diem_2: 6.5,
+    ex_mark: 0,
     Diem_3: 7,
   },
   {
@@ -336,6 +351,7 @@ const diem_sv = [
     Mon_3: "Hóa",
     Diem_1: 7,
     Diem_2: 6,
+    ex_mark: 1.75,
     Diem_3: 8,
   },
   {
@@ -348,6 +364,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 5,
     Diem_2: 7,
+    ex_mark: 0.25,
     Diem_3: 5,
   },
   {
@@ -360,6 +377,7 @@ const diem_sv = [
     Mon_3: "Anh",
     Diem_1: 7,
     Diem_2: 3.5,
+    ex_mark: 0.25,
     Diem_3: 5,
   },
 ];
@@ -647,6 +665,8 @@ const mark = diem_sv
         <td>${diem.Diem_1}</td>
         <td>${diem.Diem_2}</td>
         <td>${diem.Diem_3}</td>
+        <td>${diem.ex_mark}</td>
+        <td>${diem.Diem_1 + diem.Diem_2 + diem.Diem_3 + diem.ex_mark}</td>
     </tr>
 `
   )
@@ -663,6 +683,8 @@ const mark_list = `
     <th scope="col">Điểm Môn 1</th>
     <th scope="col">Điểm Môn 2</th>
     <th scope="col">Điểm Môn 3</th>
+    <th scope="col">Điểm ưu tiên</th>
+    <th scope="col">Tổng Điểm</th>
 </tr>
 </thead>
 <tbody>
@@ -688,7 +710,7 @@ const pass = student_pass
   .join("");
 
 const pass_list = `
-<div style="display: flex; justify-content: space-between; width: 100%">
+<div style="display: flex; justify-content: space-between; width: 100%" id="nav">
   <div class="input-group mb-3" style="width: 300px;">
   <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
   <button class="btn btn-primary">Tra Cứu</button>
@@ -733,7 +755,7 @@ const nopass = student_nopass
   .join("");
 
 const nopass_list = `
-<div style="display: flex; justify-content: space-between; width: 100%">
+<div style="display: flex; justify-content: space-between; width: 100%" id="nav">
   <div class="input-group mb-3" style="width: 300px;">
   <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
   <button class="btn btn-primary">Tra Cứu</button>
@@ -794,7 +816,7 @@ function on_pass_list() {
         })
         .join("");
       const pass_list_search = `
-      <div class="input-group mb-3" style="width: 300px;">
+      <div class="input-group mb-3" style="width: 300px;" id="nav">
         <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
         <button class="btn btn-primary">Tra Cứu</button>
       </div>
@@ -845,7 +867,7 @@ function on_nopass_list() {
         })
         .join("");
       const pass_list_search = `
-<div class="input-group mb-3" style="width: 300px;">
+<div class="input-group mb-3" style="width: 300px;" id="nav">
 <input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
 <button class="btn btn-primary">Tra Cứu</button>
 </div>
@@ -934,10 +956,28 @@ $(".add").click(function (event) {
   off_form();
 });
 
+$(".add_bench").click(function (event) {
+  event.preventDefault();
+  submitForm();
+  alert_success('Thêm Điểm Chuẩn Thành Công');
+  reset();
+  off_benchmark();
+});
+
 $(".reset").click(function (event) {
   event.preventDefault();
   reset();
 });
+
+$(".exit").click(function (event) {
+  event.preventDefault();
+  off_form();
+})
+
+$(".exit_bench").click(function (event) {
+  event.preventDefault();
+  off_benchmark();
+})
 
 function alert_success(message) {
   alert(message);

@@ -21,10 +21,11 @@
       href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../asset/print.css" />
     <title>Quản Lý Điểm Tuyển Sinh Đại Học MVC</title>
   </head>
   <body>
-    <div class="heading">
+    <div class="heading" id="head">
       <div class="heading_logo">
         <img
           src="../img/istockphoto-1197901679-612x612.jpg"
@@ -40,7 +41,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="form_search">
+      <div class="form_search" id="nav">
         <div class="search_input">
           <label for="sbd" class="search_label">Nhập SBD</label>
           <input type="text" id="sbd" />
@@ -66,6 +67,8 @@
             <th scope="col">Điểm Môn 1</th>
             <th scope="col">Điểm Môn 2</th>
             <th scope="col">Điểm Môn 3</th>
+            <th scope="col">Điểm ưu tiên</th>
+            <th scope="col">Tổng Điểm</th>
           </tr>
         </thead>
         <tbody id="table_list"></tbody>

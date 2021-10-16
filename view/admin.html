@@ -22,13 +22,14 @@
       href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../asset/print.css" />
     <title>Quản Lý Điểm Tuyển Sinh Đại Học MVC</title>
   </head>
   <body>
     <div id="overlay1">
       <!-- start form -->
       <div class="container">
-        <form id="myform">
+        <form id="myform" role="form" autocomplete="off">
           <h3 class="personal_info">Thông Tin Cá Nhân</h3>
           <div class="form_input">
             <div class="name_input">
@@ -71,7 +72,7 @@
           <div class="form_input">
             <div class="sbd_input">
               <label for="sbd">SBD</label>
-              <input type="text" id="sbd" value=""/>
+              <input type="text" id="sbd" value="" />
             </div>
             <div class="folk">
               <label for="folk">Dân Tộc</label>
@@ -81,7 +82,12 @@
             </div>
             <div class="birthday">
               <label for="">Ngày Sinh</label>
-              <input type="datepicker" id="date" class="birthday_input" style="padding: 0" />
+              <input
+                type="datepicker"
+                id="date"
+                class="birthday_input"
+                style="padding: 0"
+              />
             </div>
           </div>
           <div class="email">
@@ -134,10 +140,9 @@
             <input type="text" class="address_input" id="address" />
           </div>
           <div class="btn_block">
-            <button class="btn btn-primary add">
-              Xác nhận
-            </button>
+            <button class="btn btn-primary add">Xác nhận</button>
             <button class="btn btn-warning reset">Đặt lại</button>
+            <button class="btn btn-danger exit">Thoát</button>
           </div>
         </form>
       </div>
@@ -178,15 +183,16 @@
             style="text-align: center; margin-left: 36%"
           />
           <div class="btn_block">
-            <button class="btn btn-primary add" onclick="off_benchmark()">
+            <button class="btn btn-primary add_bench">
               Xác nhận
             </button>
             <button class="btn btn-warning reset">Đặt lại</button>
+            <button class="btn btn-danger exit_bench" style="margin-left: 10px;">Thoát</button>
           </div>
         </form>
       </div>
     </div>
-    <div class="heading">
+    <div class="heading" id="head">
       <div class="heading_logo">
         <img
           src="../img/istockphoto-1197901679-612x612.jpg"

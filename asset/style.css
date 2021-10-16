@@ -103,6 +103,7 @@ html {
 .note {
     color: red;
     margin: 5px 0px;
+    cursor: pointer;
 }
 
 .user-login {
