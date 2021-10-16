@@ -1,5 +1,4 @@
-const hssv = [
-  {
+const hssv = [{
     sbd: "001",
     name: "Ngô Thị Hồng Nhung",
     date: "19/04/2002",
@@ -145,8 +144,7 @@ const hssv = [
   },
 ];
 
-const diem_sv = [
-  {
+const diem_sv = [{
     id: "MVC106",
     sbd: "001",
     name: "Ngô Thị Hồng Nhung",
@@ -382,8 +380,7 @@ const diem_sv = [
   },
 ];
 
-const student_pass = [
-  {
+const student_pass = [{
     id: "MVC106",
     sbd: "001",
     name: "Ngô Thị Hồng Nhung",
@@ -553,8 +550,7 @@ const student_pass = [
   },
 ];
 
-const student_nopass = [
-  {
+const student_nopass = [{
     id: "MVC119",
     sbd: "002",
     name: "Đỗ Hồng Ngọc",
@@ -604,153 +600,165 @@ const student_nopass = [
   },
 ];
 
-const nganh = [
-  {
-    id: 'MVC101',
-    name: 'Kỹ thuật xây dựng CT thủy',
+const nganh = [{
+    id: "MVC101",
+    name: "Kỹ thuật xây dựng CT thủy",
     target: 100,
     benchmark: 15,
   },
   {
-    id: 'MVC102',
-    name: 'Kỹ thuật tài nguyên nước',
+    id: "MVC102",
+    name: "Kỹ thuật tài nguyên nước",
     target: 60,
     benchmark: 15.45,
   },
   {
-    id: 'MVC103',
-    name: 'Thuỷ văn học',
+    id: "MVC103",
+    name: "Thuỷ văn học",
     target: 40,
     benchmark: 16.1,
   },
   {
-    id: 'MVC104',
-    name: 'Kỹ thuật xây dựng',
+    id: "MVC104",
+    name: "Kỹ thuật xây dựng",
     target: 140,
     benchmark: 15,
   },
   {
-    id: 'MVC105',
-    name: 'Nhóm ngành kỹ thuật cơ khí',
+    id: "MVC105",
+    name: "Nhóm ngành kỹ thuật cơ khí",
     target: 210,
     benchmark: 16.25,
   },
   {
-    id: 'MVC106',
-    name: 'Nhóm ngành CNTT',
+    id: "MVC106",
+    name: "Nhóm ngành CNTT",
     target: 500,
     benchmark: 22.75,
   },
   {
-    id: 'MVC107',
-    name: 'Kỹ thuật cấp thoát nước',
+    id: "MVC107",
+    name: "Kỹ thuật cấp thoát nước",
     target: 50,
     benchmark: 15.1,
   },
   {
-    id: 'MVC109',
-    name: 'Kỹ thuật môi trường',
+    id: "MVC109",
+    name: "Kỹ thuật môi trường",
     target: 60,
     benchmark: 15.1,
   },
   {
-    id: 'MVC110',
-    name: 'Kỹ thuật cơ sở hạ tầng',
+    id: "MVC110",
+    name: "Kỹ thuật cơ sở hạ tầng",
     target: 50,
     benchmark: 15.1,
   },
   {
-    id: 'MVC111',
-    name: 'Công nghệ kỹ thuật xây dựng',
+    id: "MVC111",
+    name: "Công nghệ kỹ thuật xây dựng",
     target: 70,
     benchmark: 15.15,
   },
   {
-    id: 'MVC112',
-    name: 'Kỹ thuận điện',
+    id: "MVC112",
+    name: "Kỹ thuận điện",
     target: 140,
     benchmark: 16,
   },
   {
-    id: 'MVC113',
-    name: 'Kỹ thuật XDCT giao thông',
+    id: "MVC113",
+    name: "Kỹ thuật XDCT giao thông",
     target: 60,
     benchmark: 15.25,
   },
   {
-    id: 'MVC114',
-    name: 'Quản lý xây dựng',
+    id: "MVC114",
+    name: "Quản lý xây dựng",
     target: 110,
     benchmark: 16.05,
   },
   {
-    id: 'MVC118',
-    name: 'Kỹ thuật hoá học',
+    id: "MVC118",
+    name: "Kỹ thuật hoá học",
     target: 50,
     benchmark: 16,
   },
   {
-    id: 'MVC119',
-    name: 'Công nghệ sinh học',
+    id: "MVC119",
+    name: "Công nghệ sinh học",
     target: 50,
     benchmark: 18.5,
   },
   {
-    id: 'MVC120',
-    name: 'Kỹ thuật cơ điện tử',
+    id: "MVC120",
+    name: "Kỹ thuật cơ điện tử",
     target: 180,
     benchmark: 18.5,
   },
   {
-    id: 'MVC121',
-    name: 'Kỹ thuật điều khiển và TĐH',
+    id: "MVC121",
+    name: "Kỹ thuật điều khiển và TĐH",
     target: 200,
     benchmark: 20.1,
   },
   {
-    id: 'MVC123',
-    name: 'Kỹ thật ô tô',
+    id: "MVC123",
+    name: "Kỹ thật ô tô",
     target: 210,
     benchmark: 21.15,
   },
   {
-    id: 'MVC201',
-    name: 'CTTT Kỹ thuật xây dựng',
+    id: "MVC201",
+    name: "CTTT Kỹ thuật xây dựng",
     target: 30,
     benchmark: 15.5,
   },
   {
-    id: 'MVC202',
-    name: 'CTTT Kỹ thuật tài nguyên nước',
+    id: "MVC202",
+    name: "CTTT Kỹ thuật tài nguyên nước",
     target: 30,
     benchmark: 18.5,
   },
   {
-    id: 'MVC401',
-    name: 'Kinh tế',
+    id: "MVC401",
+    name: "Kinh tế",
     target: 180,
     benchmark: 21.05,
   },
   {
-    id: 'MVC402',
-    name: 'Quản trị kinh doanh',
+    id: "MVC402",
+    name: "Quản trị kinh doanh",
     target: 210,
     benchmark: 22.05,
   },
   {
-    id: 'MVC403',
-    name: 'Kế toán',
+    id: "MVC403",
+    name: "Kế toán",
     target: 270,
     benchmark: 21.7,
   },
 ];
 
+const add_button = `
+<div style="display: flex; justify-content: space-between; width: 100%">
+<button class="btn btn-primary add" onclick="on_form()">
+  <i class="fas fa-plus-circle"></i> Thêm Hồ Sơ
+</button>
+<div class="input-group" style="width: 300px;" id="nav">
+      <input type="text" class="form-control" id="search_sbd" placeholder="Nhập SBD tìm kiếm..." aria-describedby="basic-addon1">
+      <button class="btn btn-primary">Tra Cứu</button>
+</div>
+</div>
+`;
+
 const student_table = document.getElementById("content");
+
 function render_student_list() {
   const student = hssv
     .map(
       (item, index) => `
-  <tr class="table_row">
+  <tr class="table_row table_data">
   <th scope="row">${index + 1}</th>
           <td>${item.sbd}</td>
           <td>${item.name}</td>
@@ -760,18 +768,12 @@ function render_student_list() {
           <td>
           <button class="btn btn-warning px-4">Chi Tiết</button>
           <button class="btn btn-primary px-4">Sửa</button>
-          <button class="btn btn-danger px-4">Xóa</button>
+          <button class="btn btn-danger delete_btn px-4" data-index = ${index}>Xóa</button>
           </td>
       </tr>
       `
     )
     .join("");
-
-  const add_button = `
-  <button class="btn btn-primary add" onclick="on_form()">
-    <i class="fas fa-plus-circle"></i> Thêm Hồ Sơ
-  </button>
-  `;
 
   const student_list = `
       ${add_button}
@@ -1034,16 +1036,65 @@ function on_nopass_list() {
   };
 }
 
+var nganh_list = nganh
+  .map(
+    (item) => `
+  <tr class="table_row">
+  <td>${item.id}</td>
+  <td>${item.name}</td>
+  <td>${item.target}</td>
+  <td>${item.benchmark}</td>
+  </tr>
+`
+  )
+  .join("");
+const benchmark_list = `
+<div class="input-group mb-3" style="width: 300px;" id="nav">
+<input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
+<button class="btn btn-primary">Tra Cứu</button>
+</div>
+<table class="table mt-6" id="nofication">
+<thead>
+<tr>
+    <th scope="col">Mã Ngành</th>
+    <th scope="col">Tên Ngành</th>
+    <th scope="col">Chỉ tiêu</th>
+    <th scope="col">Điểm chuẩn</th>
+</tr>
+</thead>
+<tbody>
+    ${nganh_list}
+</tbody>
+</table>
+`;
+
 function on_benchmark_list() {
-  var ps = nganh.map(item => `
-    <tr class="table_row">
-    <td>${item.id}</td>
-    <td>${item.name}</td>
-    <td>${item.target}</td>
-    <td>${item.benchmark}</td>
-    </tr>
-  `).join('');
-  const benchmark_list = `
+  student_table.innerHTML = benchmark_list;
+  search_benchmark_list();
+}
+
+function search_benchmark_list() {
+  const nganhInput = document.getElementById("search_nganh");
+  nganhInput.onchange = () => {
+    if (nganhInput.value == "") {
+      return;
+    } else {
+      var ps = nganh.map((item) => {
+        if (item.id == nganhInput.value) {
+          return `
+            <tr class="table_row">
+            <td>${item.id}</td>
+            <td>${item.name}</td>
+            <td>${item.target}</td>
+            <td>${item.benchmark}</td>
+            </tr>`;
+        }
+      }).join('');
+      const benchmark_list = `
+<div class="input-group mb-3" style="width: 300px;" id="nav">
+<input type="text" class="form-control" id="search_nganh" placeholder="Nhập mã ngành" aria-label="Nhập mã ngành" aria-describedby="basic-addon1">
+<button class="btn btn-primary">Tra Cứu</button>
+</div>
   <table class="table mt-6" id="nofication">
   <thead>
   <tr>
@@ -1057,13 +1108,11 @@ function on_benchmark_list() {
       ${ps}
   </tbody>
   </table>
-  `
-  student_table.innerHTML = benchmark_list
+  `;
+  student_table.innerHTML = benchmark_list;
+    }
+  };
 }
-
-
-
-
 
 var form = {};
 
@@ -1122,7 +1171,7 @@ $(".add").click(function (event) {
   event.preventDefault();
   submitForm();
   hssv.push(form);
-  alert_success('Thêm Hồ Sơ Thành Công');
+  alert_success("Thêm Hồ Sơ Thành Công");
   render_student_list();
   reset();
   off_form();
@@ -1136,10 +1185,78 @@ $(".reset").click(function (event) {
 $(".exit").click(function (event) {
   event.preventDefault();
   off_form();
-})
+});
 
 function alert_success(message) {
   alert(message);
 }
 
 render_student_list();
+
+var table_row = document.getElementsByClassName("table_data");
+var detele_btns = document.querySelectorAll(".delete_btn");
+for (var i = 0; i < detele_btns.length; i++) {
+  detele_btns[i].onclick = (e) => {
+    table_row[e.target.getAttribute("data-index")].style.display = "none";
+  };
+}
+
+var student_pass_id = [...student_pass.map((item) => item.id)];
+var student_id = [...hssv.map((item) => item.sbd)];
+var x = "MVC401";
+if (student_pass_id.includes(x)) {
+  console.log("true");
+}
+
+var sbdInput = document.getElementById("search_sbd");
+sbdInput.onchange = () => {
+  if (sbdInput.value == "") {
+    return;
+  } else {
+    if (student_id.includes(sbdInput.value) == true) {
+      var ps = hssv
+        .map((item, index) => {
+          if (sbdInput.value == item.sbd) {
+            return `
+          <tr class="table_row table_data">
+          <th scope="row">${index + 1}</th>
+                  <td>${item.sbd}</td>
+                  <td>${item.name}</td>
+                  <td>${item.sex}</td>
+                  <td>${item.date}</td>
+                  <td>${item.phone}</td>
+                  <td>
+                  <button class="btn btn-warning px-4">Chi Tiết</button>
+                  <button class="btn btn-primary px-4">Sửa</button>
+                  <button class="btn btn-danger delete_btn px-4" data-index = ${index}>Xóa</button>
+                  </td>
+              </tr>
+          `;
+          }
+        })
+        .join("");
+      const student_list = `
+    ${add_button}
+    <table class="student_table table table-bordered" id="student_table">
+    <thead>
+      <tr class="table_row">
+        <th scope="col" class="table_title">STT</th>
+        <th scope="col" class="table_title">SBD</th>
+        <th scope="col" class="table_title">Họ Tên</th>
+        <th scope="col" class="table_title">Giới Tính</th>
+        <th scope="col" class="table_title">Ngày Sinh</th>
+        <th scope="col" class="table_title">SĐT</th>
+        <th scope="col" class="table_title">Công cụ</th>
+      </tr>
+    </thead>
+    <tbody  id="student_list">
+        ${ps}
+    </tbody>
+    </table>
+`;
+      student_table.innerHTML = student_list;
+    } else {
+      alert("Không tìm thấy sbd");
+    }
+  }
+};
