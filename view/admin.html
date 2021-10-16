@@ -23,6 +23,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../asset/print.css" />
+    <link rel="stylesheet" href="../asset/preload.css">
     <title>Quản Lý Điểm Tuyển Sinh Đại Học MVC</title>
   </head>
   <body>
@@ -183,11 +184,11 @@
             style="text-align: center; margin-left: 36%"
           />
           <div class="btn_block">
-            <button class="btn btn-primary add_bench">
-              Xác nhận
-            </button>
+            <button class="btn btn-primary add_bench">Xác nhận</button>
             <button class="btn btn-warning reset">Đặt lại</button>
-            <button class="btn btn-danger exit_bench" style="margin-left: 10px;">Thoát</button>
+            <button class="btn btn-danger exit_bench" style="margin-left: 10px">
+              Thoát
+            </button>
           </div>
         </form>
       </div>
@@ -263,6 +264,11 @@
       </div>
     </div>
     <div class="content" id="content"></div>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
     <script type="text/javascript" src="../asset/admin.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -290,5 +296,12 @@
     ></script>
     <script src="../asset/form.js"></script>
     <script src="../asset/hssv.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        setTimeout(function () {
+          $("body").addClass("loaded");
+        }, 3000);
+      });
+    </script>
   </body>
 </html>

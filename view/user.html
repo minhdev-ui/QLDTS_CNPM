@@ -22,6 +22,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../asset/print.css" />
+    <link rel="stylesheet" href="../asset/preload.css">
     <title>Quản Lý Điểm Tuyển Sinh Đại Học MVC</title>
   </head>
   <body>
@@ -74,6 +75,11 @@
         <tbody id="table_list"></tbody>
       </table>
     </div>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -94,5 +100,12 @@
       crossorigin="anonymous"
     ></script>
     <script src="../asset/search.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        setTimeout(function () {
+          $("body").addClass("loaded");
+        }, 3000);
+      });
+    </script>
   </body>
 </html>
