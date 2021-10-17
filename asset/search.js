@@ -235,6 +235,121 @@ const diem_sv = [
   },
 ];
 
+const student_pass = [{
+  id: "MVC106",
+  sbd: "001",
+  name: "Ngô Thị Hồng Nhung",
+  Khoi_thi: "D01",
+  Mon_1: "Văn",
+  Mon_2: "Toán",
+  Mon_3: "Anh",
+  Diem_1: 9,
+  Diem_2: 8.8,
+  Diem_3: 7,
+},
+{
+  id: "MVC110",
+  sbd: "003",
+  name: "Hoàng Thị Minh Lan",
+  Khoi_thi: "A01",
+  Mon_1: "Toán",
+  Mon_2: "Lý",
+  Mon_3: "Anh",
+  Diem_1: 7,
+  Diem_2: 8.5,
+  Diem_3: 6.4,
+},
+{
+  id: "MVC105",
+  sbd: "004",
+  name: "Đỗ Minh Hùng",
+  Khoi_thi: "D07",
+  Mon_1: "Toán",
+  Mon_2: "Hóa",
+  Mon_3: "Anh",
+  Diem_1: 8.4,
+  Diem_2: 7,
+  Diem_3: 6,
+},
+{
+  id: "MVC121",
+  sbd: "006",
+  name: "Hoàng Thị May",
+  Khoi_thi: "D01",
+  Mon_1: "Văn",
+  Mon_2: "Toán",
+  Mon_3: "Anh",
+  Diem_1: 7,
+  Diem_2: 6,
+  Diem_3: 9,
+},
+{
+  id: "MVC120",
+  sbd: "008",
+  name: "Nguyễn Ánh Nguyệt",
+  Khoi_thi: "A00",
+  Mon_1: "Toán",
+  Mon_2: "Lý",
+  Mon_3: "Hóa",
+  Diem_1: 9.2,
+  Diem_2: 8,
+  Diem_3: 8.2,
+},
+{
+  id: "MVC402",
+  sbd: "009",
+  name: "Uông Văn Nam",
+  Khoi_thi: "A01",
+  Mon_1: "Toán",
+  Mon_2: "Lý",
+  Mon_3: "Anh",
+  Diem_1: 7,
+  Diem_2: 6,
+  Diem_3: 9,
+},
+{
+  id: "MVC112",
+  sbd: "009",
+  name: "Uông Văn Nam",
+  Khoi_thi: "A00",
+  Mon_1: "Toán",
+  Mon_2: "Lý",
+  Mon_3: "Hóa",
+  Diem_1: 7,
+  Diem_2: 6,
+  Diem_3: 7,
+},
+{
+  id: "MVC123",
+  sbd: "010",
+  name: "Nguyễn Khánh Linh",
+  Khoi_thi: "D07",
+  Mon_1: "Toán",
+  Mon_2: "Hóa",
+  Mon_3: "Anh",
+  Diem_1: 8.4,
+  Diem_2: 6.5,
+  Diem_3: 7,
+},
+{
+  id: "MVC105",
+  sbd: "011",
+  name: "Hoàng Hải Long",
+  Khoi_thi: "A00",
+  Mon_1: "Toán",
+  Mon_2: "Lý",
+  Mon_3: "Hóa",
+  Diem_1: 7,
+  Diem_2: 6,
+  Diem_3: 8,
+},
+];
+
+const student_pass_sbd = [...student_pass.map(item => item.sbd)]
+const student_pass_id = [...student_pass.map(item => item.id)]
+const student_pass_khoithi = [...student_pass.map(item => item.Khoi_thi)]
+console.log(student_pass_id)
+
 const search_table = document.getElementById("table_list");
 const search_sbd = document.getElementById("sbd");
 search_sbd.onchange = () => {
@@ -258,4 +373,7 @@ search_sbd.onchange = () => {
     })
     .join("");
   search_table.innerHTML = search_list;
+  if(student_pass_sbd.includes(search_sbd.value)){
+    alert('Bạn đã trúng tuyển vào ngành ' + student_pass_id[student_pass_sbd.indexOf(search_sbd.value)] + ' khối ' + student_pass_khoithi[student_pass_sbd.indexOf(search_sbd.value)])
+  }
 };

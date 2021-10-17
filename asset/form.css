@@ -95,3 +95,22 @@ label {
 .reset {
     margin-left: 10px;
 }
+
+.heading_detail {
+    border-bottom: 1px dashed;
+}
+
+.heading_detail_title {
+    font-size: 25px;
+}
+
+.detail_group {
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.detail_heading {
+    margin-right: 10px;
+}

@@ -1,5 +1,4 @@
-const dan_toc = [
-  {
+const dan_toc = [{
     id: "01",
     name: "Kinh",
     desc: "Tên gọi khác: Việt",
@@ -101,8 +100,7 @@ const dan_toc = [
   },
 ];
 
-const khoi = [
-  {
+const khoi = [{
     id: "A00",
     mon_1: "Toán",
     mon_2: "Lý",
@@ -140,6 +138,345 @@ const khoi = [
   },
 ];
 
+var overlay = document.getElementById("overlay");
+var add_hssv = document.getElementById("add_hssv");
+add_hssv.onclick = () => {
+  var ps = `
+  <div class="container">
+  <form id="myform" role="form" autocomplete="off">
+    <h3 class="personal_info">Thông Tin Cá Nhân</h3>
+    <div class="form_input">
+      <div class="name_input">
+        <label for="name">Họ Tên</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Eg: Nguyễn Văn A"
+          value=""
+        />
+      </div>
+      <div class="gender">
+        <label for="">Giới Tính</label>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="exampleRadios2"
+            value="Nữ"
+          />
+          <label class="form-check-label" for="exampleRadios2">
+            Nữ
+          </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="gender"
+            id="exampleRadios1"
+            value="Nam"
+            checked
+          />
+          <label class="form-check-label" for="exampleRadios1">
+            Nam
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form_input">
+      <div class="sbd_input">
+        <label for="sbd">SBD</label>
+        <input type="text" id="sbd" value="" />
+      </div>
+      <div class="folk">
+        <label for="folk">Dân Tộc</label>
+        <select class="custom-select" id="folk_list">
+          <option selected>--Chọn Dân Tộc--</option>
+        </select>
+      </div>
+      <div class="birthday">
+        <label for="">Ngày Sinh</label>
+        <input
+          type="datepicker"
+          id="date"
+          class="birthday_input"
+          style="padding: 0"
+        />
+      </div>
+    </div>
+    <div class="email">
+      <label for="email">Email (Nếu có)</label>
+      <input
+        type="email"
+        class="email_input"
+        id="email"
+        placeholder="Eg: example@gmail.com"
+      />
+    </div>
+    <div class="form_input">
+      <div class="cmnd">
+        <label for="cmnd">CMND/CCCD</label>
+        <input type="text" class="cmnd-input" id="cmnd" />
+      </div>
+      <div class="phone_number">
+        <label for="phone">SĐT</label>
+        <input type="text" id="phone" class="phone-input" />
+      </div>
+    </div>
+    <div class="form_input">
+      <div class="unit">
+        <label for="">Khối Thi</label>
+        <select class="custom-select" id="unit_list">
+          <option selected>--Chọn Khối Thi--</option>
+        </select>
+      </div>
+      <div class="department">
+        <label for="">Ngành</label>
+        <select class="custom-select">
+          <option selected>--Chọn Ngành--</option>
+          <option value="cntt">Công Nghệ Thông Tin</option>
+          <option value="ktpm">Kĩ Thuật Phần Mềm</option>
+          <option value="httt">Hệ Thống Thông Tin</option>
+        </select>
+      </div>
+      <div class="aria">
+        <label for="">Khu Vực</label>
+        <select class="custom-select">
+          <option selected>--Chọn Khu Vực--</option>
+          <option value="kv1">KV1</option>
+          <option value="kv2">KV2</option>
+          <option value="kv3">KV3</option>
+          <option value="kv2nt">KV2NT</option>
+        </select>
+      </div>
+    </div>
+    <div class="address">
+      <label for="address">Địa Chỉ</label>
+      <input type="text" class="address_input" id="address" />
+    </div>
+    <div class="btn_block">
+      <button class="btn btn-primary add">Xác nhận</button>
+      <button class="btn btn-warning reset">Đặt lại</button>
+      <button class="btn btn-danger exit">Thoát</button>
+    </div>
+  </form>
+</div>
+  `
+  overlay.innerHTML = ps
+  on_form();
+  $(".add").click(function (event) {
+    event.preventDefault();
+    submitForm();
+    hssv.push(form);
+    alert_success("Thêm Hồ Sơ Thành Công");
+    render_student_list();
+    reset();
+    off_form();
+  });
+  $(".reset").click(function (event) {
+    event.preventDefault();
+    reset();
+  });
+  $(".exit").click(function (event) {
+    event.preventDefault();
+    off_form();
+  });
+}
+
+var edit_btns = document.querySelectorAll(".edit_btn");
+for (var i = 0; i < edit_btns.length; i++) {
+  edit_btns[i].onclick = (e) => {
+    var ps = `
+    <div class="container">
+    <form id="myform" role="form" autocomplete="off">
+      <h3 class="personal_info">Thông Tin Cá Nhân</h3>
+      <div class="form_input">
+        <div class="name_input">
+          <label for="name">Họ Tên</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Eg: Nguyễn Văn A"
+            value="${hssv[e.target.getAttribute('data-index')].name}"
+          />
+        </div>
+        <div class="gender">
+          <label for="">Giới Tính</label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="exampleRadios2"
+              value="Nữ"
+              ${hssv[e.target.getAttribute('data-index')].sex == 'Nữ' ? 'checked' : ''}
+            />
+            <label class="form-check-label" for="exampleRadios2">
+              Nữ
+            </label>
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="exampleRadios1"
+              value="Nam"
+              ${hssv[e.target.getAttribute('data-index')].sex == 'Nam' ? 'checked' : ''}
+            />
+            <label class="form-check-label" for="exampleRadios1">
+              Nam
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form_input">
+        <div class="sbd_input">
+          <label for="sbd">SBD</label>
+          <input type="text" id="sbd" value="${hssv[e.target.getAttribute('data-index')].sbd}" />
+        </div>
+        <div class="folk">
+          <label for="folk">Dân Tộc</label>
+          <select class="custom-select" id="folk_list">
+            <option selected>${hssv[e.target.getAttribute('data-index')].folk}</option>
+          </select>
+        </div>
+        <div class="birthday">
+          <label for="">Ngày Sinh</label>
+          <input
+            type="datepicker"
+            id="date"
+            class="birthday_input"
+            style="padding: 0"
+            value = "${hssv[e.target.getAttribute('data-index')].date}"
+          />
+        </div>
+      </div>
+      <div class="email">
+        <label for="email">Email (Nếu có)</label>
+        <input
+          type="email"
+          class="email_input"
+          id="email"
+          placeholder="Eg: example@gmail.com"
+        />
+      </div>
+      <div class="form_input">
+        <div class="cmnd">
+          <label for="cmnd">CMND/CCCD</label>
+          <input type="text" class="cmnd-input" id="cmnd" value = "${hssv[e.target.getAttribute('data-index')].cmnd_cccd}"/>
+        </div>
+        <div class="phone_number">
+          <label for="phone">SĐT</label>
+          <input type="text" id="phone" class="phone-input" value = "${hssv[e.target.getAttribute('data-index')].phone}"/>
+        </div>
+      </div>
+        <div class="aria">
+          <label for="">Khu Vực</label>
+          <select class="custom-select">
+            <option selected>${hssv[e.target.getAttribute('data-index')].aria}</option>
+            <option value="a01">Khu Vực 1</option>
+            <option value="a00">Khu Vực 2</option>
+            <option value="d00">Khu Vực 3</option>
+          </select>
+        </div>
+        <div class="address">
+          <label for="address">Địa Chỉ</label>
+          <input type="text" class="address_input" id="address" value = "${hssv[e.target.getAttribute('data-index')].address}"/>
+        </div>
+        <div class="btn_block">
+          <button class="btn btn-primary update">Cập Nhật</button>
+          <button class="btn btn-warning reset">Đặt lại</button>
+          <button class="btn btn-danger exit">Thoát</button>
+        </div>
+      </form>
+      </div>
+    `
+    overlay.innerHTML = ps
+    on_form();
+    $(".update").click(function (event) {
+      event.preventDefault();
+      confirm("Bạn chắc chắn muốn cập nhật hồ sơ !");
+      reset();
+      off_form();
+    });
+    $(".reset").click(function (event) {
+      event.preventDefault();
+      reset();
+    });
+    $(".exit").click(function (event) {
+      event.preventDefault();
+      reset();
+      off_form();
+    });
+  }
+}
+
+var detail_btn = document.querySelectorAll(".detail_btn");
+for (var i = 0; i < detail_btn.length; i++) {
+  detail_btn[i].onclick = (e) => {
+    var ps = `
+    <div class="container detail">
+        <form>
+            <div class="heading_detail">
+                <h2 class="heading_detail_title">
+                    THÔNG TIN SINH VIÊN
+                </h2>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">Họ Tên: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].name}</span>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">Giới tính: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].sex}</span>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">SBD: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].sbd}</span>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">Dân Tộc: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].folk}</span>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">Ngày Sinh: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].date}</span>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">CCCD/CMND: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].cmnd_cccd}</span>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">SĐT: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].phone}</span>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">Khu Vực: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].aria}</span>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">Đối Tượng Ưu Tiên: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].spacial_person}</span>
+            </div>
+            <div class="detail_group">
+                <label class="detail_heading">Địa Chỉ: </label>
+                <span class="detail_content">${hssv[e.target.getAttribute('data-index')].address}</span>
+            </div>
+            <div class="btn_block">
+                <button class="btn btn-danger exit">Thoát</button>
+            </div>
+        </form>
+    </div>
+    `
+    overlay.innerHTML = ps
+    on_form();
+    $(".exit").click(function (event) {
+      event.preventDefault();
+      off_form();
+    });
+  }
+}
+
 const folk = document.getElementById("folk_list");
 const unit = document.getElementById("unit_list");
 const folk_list = dan_toc
@@ -157,13 +494,5 @@ const unit_list = khoi.map(
 );
 unit.innerHTML += unit_list;
 
-function on_form() {
-  document.getElementById("overlay1").style.display = "block";
-}
-function off_form() {
-  document.getElementById("overlay1").style.display = "none";
-}
 
 // add controller
-
-

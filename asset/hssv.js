@@ -393,18 +393,6 @@ const student_pass = [{
     Diem_3: 7,
   },
   {
-    id: "MVC401",
-    sbd: "001",
-    name: "Ngô Thị Hồng Nhung",
-    Khoi_thi: "D01",
-    Mon_1: "Văn",
-    Mon_2: "Toán",
-    Mon_3: "Anh",
-    Diem_1: 9,
-    Diem_2: 8.8,
-    Diem_3: 7,
-  },
-  {
     id: "MVC110",
     sbd: "003",
     name: "Hoàng Thị Minh Lan",
@@ -415,18 +403,6 @@ const student_pass = [{
     Diem_1: 7,
     Diem_2: 8.5,
     Diem_3: 6.4,
-  },
-  {
-    id: "MVC107",
-    sbd: "003",
-    name: "Hoàng Thị Minh Lan",
-    Khoi_thi: "A00",
-    Mon_1: "Toán",
-    Mon_2: "Lý",
-    Mon_3: "Hóa",
-    Diem_1: 7,
-    Diem_2: 9,
-    Diem_3: 8.5,
   },
   {
     id: "MVC105",
@@ -441,18 +417,6 @@ const student_pass = [{
     Diem_3: 6,
   },
   {
-    id: "MVC106",
-    sbd: "005",
-    name: "Đỗ Ngọc Minh",
-    Khoi_thi: "A00",
-    Mon_1: "Toán",
-    Mon_2: "Lý",
-    Mon_3: "Hóa",
-    Diem_1: 7.2,
-    Diem_2: 8,
-    Diem_3: 7,
-  },
-  {
     id: "MVC121",
     sbd: "006",
     name: "Hoàng Thị May",
@@ -463,30 +427,6 @@ const student_pass = [{
     Diem_1: 7,
     Diem_2: 6,
     Diem_3: 9,
-  },
-  {
-    id: "MVC401",
-    sbd: "007",
-    name: "Tòng Thị Hoàng",
-    Khoi_thi: "D01",
-    Mon_1: "Văn",
-    Mon_2: "Toán",
-    Mon_3: "Anh",
-    Diem_1: 2.5,
-    Diem_2: 3.4,
-    Diem_3: 4,
-  },
-  {
-    id: "MVC114",
-    sbd: "007",
-    name: "Tòng Thị Hoàng",
-    Khoi_thi: "D01",
-    Mon_1: "Văn",
-    Mon_2: "Toán",
-    Mon_3: "Anh",
-    Diem_1: 2.5,
-    Diem_2: 3.4,
-    Diem_3: 4,
   },
   {
     id: "MVC120",
@@ -573,6 +513,42 @@ const student_nopass = [{
     Diem_1: 3,
     Diem_2: 3.5,
     Diem_3: 3.2,
+  },
+  {
+    id: "MVC106",
+    sbd: "005",
+    name: "Đỗ Ngọc Minh",
+    Khoi_thi: "A00",
+    Mon_1: "Toán",
+    Mon_2: "Lý",
+    Mon_3: "Hóa",
+    Diem_1: 7.2,
+    Diem_2: 8,
+    Diem_3: 7,
+  },
+  {
+    id: "MVC401",
+    sbd: "007",
+    name: "Tòng Thị Hoàng",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 2.5,
+    Diem_2: 3.4,
+    Diem_3: 4,
+  },
+  {
+    id: "MVC114",
+    sbd: "007",
+    name: "Tòng Thị Hoàng",
+    Khoi_thi: "D01",
+    Mon_1: "Văn",
+    Mon_2: "Toán",
+    Mon_3: "Anh",
+    Diem_1: 2.5,
+    Diem_2: 3.4,
+    Diem_3: 4,
   },
   {
     id: "MVC401",
@@ -740,9 +716,17 @@ const nganh = [{
   },
 ];
 
+function on_form() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off_form() {
+  document.getElementById("overlay").style.display = "none";
+}
+
 const add_button = `
 <div style="display: flex; justify-content: space-between; width: 100%">
-<button class="btn btn-primary add" onclick="on_form()">
+<button class="btn btn-primary" onclick="on_form()" id="add_hssv">
   <i class="fas fa-plus-circle"></i> Thêm Hồ Sơ
 </button>
 <div class="input-group" style="width: 300px;" id="nav">
@@ -766,8 +750,8 @@ function render_student_list() {
           <td>${item.date}</td>
           <td>${item.phone}</td>
           <td>
-          <button class="btn btn-warning px-4">Chi Tiết</button>
-          <button class="btn btn-primary px-4">Sửa</button>
+          <button class="btn btn-warning detail_btn px-4" data-index = ${index}>Chi Tiết</button>
+          <button class="btn btn-primary edit_btn px-4" data-index = ${index}>Sửa</button>
           <button class="btn btn-danger delete_btn px-4" data-index = ${index}>Xóa</button>
           </td>
       </tr>
@@ -816,6 +800,16 @@ const mark = diem_sv
   .join("");
 
 const mark_list = `
+<div style="display: flex; justify-content: space-between; width: 100%" id="nav">
+  <div class="input-group mb-3" style="width: 300px;">
+  <input type="text" class="form-control" id="search_sbd" placeholder="Nhập SBD tìm kiếm" aria-describedby="basic-addon1">
+  <button class="btn btn-primary">Tra Cứu</button>
+  </div>
+  <button class="btn" onclick="window.print()" style="height: 38px">
+    <i class="fas fa-print"></i>
+    In Bảng Điểm
+  </button>
+</div>
 <table class="table mt-6" id="nofication">
 <thead>
 <tr>
@@ -928,6 +922,61 @@ const nopass_list = `
 
 function on_mark_list() {
   student_table.innerHTML = mark_list;
+  var sbd_input = document.getElementById("search_sbd");
+  sbd_input.onchange = () => {
+    var ps = diem_sv.map(diem => {
+      if (sbd_input.value == '') {
+        return;
+      } else {
+        if (sbd_input.value == diem.sbd) {
+          return `
+          <tr class="table_row">
+            <td>${diem.sbd}</td>
+            <td>${diem.name}</td>
+            <td>${diem.id}</td>
+            <td>${diem.Khoi_thi}</td>
+            <td>${diem.Diem_1}</td>
+            <td>${diem.Diem_2}</td>
+            <td>${diem.Diem_3}</td>
+            <td>${diem.ex_mark}</td>
+            <td>${diem.Diem_1 + diem.Diem_2 + diem.Diem_3 + diem.ex_mark}</td>
+          </tr>
+          `
+        }
+      }
+    }).join('');
+    const mark_list = `
+<div style="display: flex; justify-content: space-between; width: 100%" id="nav">
+  <div class="input-group mb-3" style="width: 300px;">
+  <input type="text" class="form-control" id="search_sbd" placeholder="Nhập SBD tìm kiếm" aria-describedby="basic-addon1">
+  <button class="btn btn-primary">Tra Cứu</button>
+  </div>
+  <button class="btn" onclick="window.print()" style="height: 38px">
+    <i class="fas fa-print"></i>
+    In Bảng Điểm
+  </button>
+</div>
+<table class="table mt-6" id="nofication">
+<thead>
+<tr>
+    <th scope="col">SBD</th>
+    <th scope="col">Họ Tên</th>
+    <th scope="col">Ngành</th>
+    <th scope="col">Khối</th>
+    <th scope="col">Điểm Môn 1</th>
+    <th scope="col">Điểm Môn 2</th>
+    <th scope="col">Điểm Môn 3</th>
+    <th scope="col">Điểm ưu tiên</th>
+    <th scope="col">Tổng Điểm</th>
+</tr>
+</thead>
+<tbody>
+    ${ps}
+</tbody>
+</table>
+`;
+    student_table.innerHTML = mark_list;
+  }
 }
 
 function on_student_list() {
@@ -1109,10 +1158,12 @@ function search_benchmark_list() {
   </tbody>
   </table>
   `;
-  student_table.innerHTML = benchmark_list;
+      student_table.innerHTML = benchmark_list;
     }
   };
 }
+
+render_student_list();
 
 var form = {};
 
@@ -1164,48 +1215,21 @@ phone_input.onchange = () => {
 function submitForm() {
   form["sex"] = findSelection();
   form["folk"] = findcheck();
-  console.log(form);
 }
-
-$(".add").click(function (event) {
-  event.preventDefault();
-  submitForm();
-  hssv.push(form);
-  alert_success("Thêm Hồ Sơ Thành Công");
-  render_student_list();
-  reset();
-  off_form();
-});
-
-$(".reset").click(function (event) {
-  event.preventDefault();
-  reset();
-});
-
-$(".exit").click(function (event) {
-  event.preventDefault();
-  off_form();
-});
 
 function alert_success(message) {
   alert(message);
-}
 
-render_student_list();
+}
 
 var table_row = document.getElementsByClassName("table_data");
 var detele_btns = document.querySelectorAll(".delete_btn");
 for (var i = 0; i < detele_btns.length; i++) {
   detele_btns[i].onclick = (e) => {
-    table_row[e.target.getAttribute("data-index")].style.display = "none";
+    if(confirm("Bạn có muốn xóa hồ sơ có số báo danh là " + hssv[e.target.getAttribute("data-index")].sbd)){
+      table_row[e.target.getAttribute("data-index")].style.display = "none";
+    }
   };
-}
-
-var student_pass_id = [...student_pass.map((item) => item.id)];
-var student_id = [...hssv.map((item) => item.sbd)];
-var x = "MVC401";
-if (student_pass_id.includes(x)) {
-  console.log("true");
 }
 
 var sbdInput = document.getElementById("search_sbd");
@@ -1226,8 +1250,8 @@ sbdInput.onchange = () => {
                   <td>${item.date}</td>
                   <td>${item.phone}</td>
                   <td>
-                  <button class="btn btn-warning px-4">Chi Tiết</button>
-                  <button class="btn btn-primary px-4">Sửa</button>
+                  <button class="btn btn-warning detail_btn px-4" data-index = ${index}>Chi Tiết</button>
+                  <button class="btn btn-primary edit_btn px-4" data-index = ${index}>Sửa</button>
                   <button class="btn btn-danger delete_btn px-4" data-index = ${index}>Xóa</button>
                   </td>
               </tr>
