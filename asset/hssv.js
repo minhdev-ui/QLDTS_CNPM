@@ -731,7 +731,7 @@ const add_button = `
 </button>
 <div class="input-group" style="width: 300px;" id="nav">
       <input type="text" class="form-control" id="search_sbd" placeholder="Nhập SBD tìm kiếm..." aria-describedby="basic-addon1">
-      <button class="btn btn-primary">Tra Cứu</button>
+      <button class="btn btn-primary" >Tra Cứu</button>
 </div>
 </div>
 `;
@@ -780,55 +780,58 @@ function render_student_list() {
   `;
   student_table.innerHTML = student_list;
 }
+function render_mark_list() {
 
-const mark = diem_sv
-  .map(
-    (diem) => `
-    <tr class="table_row">
-        <td>${diem.sbd}</td>
-        <td>${diem.name}</td>
-        <td>${diem.id}</td>
-        <td>${diem.Khoi_thi}</td>
-        <td>${diem.Diem_1}</td>
-        <td>${diem.Diem_2}</td>
-        <td>${diem.Diem_3}</td>
-        <td>${diem.ex_mark}</td>
-        <td>${diem.Diem_1 + diem.Diem_2 + diem.Diem_3 + diem.ex_mark}</td>
-    </tr>
-`
-  )
-  .join("");
-
-const mark_list = `
-<div style="display: flex; justify-content: space-between; width: 100%" id="nav">
-  <div class="input-group mb-3" style="width: 300px;">
-  <input type="text" class="form-control" id="search_sbd" placeholder="Nhập SBD tìm kiếm" aria-describedby="basic-addon1">
-  <button class="btn btn-primary">Tra Cứu</button>
+  const mark = diem_sv
+    .map(
+      (diem) => `
+      <tr class="table_row">
+          <td>${diem.sbd}</td>
+          <td>${diem.name}</td>
+          <td>${diem.id}</td>
+          <td>${diem.Khoi_thi}</td>
+          <td>${diem.Diem_1}</td>
+          <td>${diem.Diem_2}</td>
+          <td>${diem.Diem_3}</td>
+          <td>${diem.ex_mark}</td>
+          <td>${diem.Diem_1 + diem.Diem_2 + diem.Diem_3 + diem.ex_mark}</td>
+      </tr>
+  `
+    )
+    .join("");
+  
+  const mark_list = `
+  <div style="display: flex; justify-content: space-between; width: 100%" id="nav">
+    <div class="input-group mb-3" style="width: 300px;">
+    <input type="text" class="form-control" id="search_sbd" placeholder="Nhập SBD tìm kiếm" aria-describedby="basic-addon1">
+    <button class="btn btn-primary" onclick = search_mark_list();>Tra Cứu</button>
+    </div>
+    <button class="btn" onclick="window.print()" style="height: 38px">
+      <i class="fas fa-print"></i>
+      In Bảng Điểm
+    </button>
   </div>
-  <button class="btn" onclick="window.print()" style="height: 38px">
-    <i class="fas fa-print"></i>
-    In Bảng Điểm
-  </button>
-</div>
-<table class="table mt-6" id="nofication">
-<thead>
-<tr>
-    <th scope="col">SBD</th>
-    <th scope="col">Họ Tên</th>
-    <th scope="col">Ngành</th>
-    <th scope="col">Khối</th>
-    <th scope="col">Điểm Môn 1</th>
-    <th scope="col">Điểm Môn 2</th>
-    <th scope="col">Điểm Môn 3</th>
-    <th scope="col">Điểm ưu tiên</th>
-    <th scope="col">Tổng Điểm</th>
-</tr>
-</thead>
-<tbody>
-    ${mark}
-</tbody>
-</table>
-`;
+  <table class="table mt-6" id="nofication">
+  <thead>
+  <tr>
+      <th scope="col">SBD</th>
+      <th scope="col">Họ Tên</th>
+      <th scope="col">Ngành</th>
+      <th scope="col">Khối</th>
+      <th scope="col">Điểm Môn 1</th>
+      <th scope="col">Điểm Môn 2</th>
+      <th scope="col">Điểm Môn 3</th>
+      <th scope="col">Điểm ưu tiên</th>
+      <th scope="col">Tổng Điểm</th>
+  </tr>
+  </thead>
+  <tbody>
+      ${mark}
+  </tbody>
+  </table>
+  `;
+  student_table.innerHTML = mark_list;
+}
 
 const pass = student_pass
   .map(
@@ -921,35 +924,34 @@ const nopass_list = `
 `;
 
 function on_mark_list() {
-  student_table.innerHTML = mark_list;
+  render_mark_list();
+}
+
+function search_mark_list() {
   var sbd_input = document.getElementById("search_sbd");
-  sbd_input.onchange = () => {
-    var ps = diem_sv.map(diem => {
-      if (sbd_input.value == '') {
-        return;
-      } else {
-        if (sbd_input.value == diem.sbd) {
-          return `
-          <tr class="table_row">
-            <td>${diem.sbd}</td>
-            <td>${diem.name}</td>
-            <td>${diem.id}</td>
-            <td>${diem.Khoi_thi}</td>
-            <td>${diem.Diem_1}</td>
-            <td>${diem.Diem_2}</td>
-            <td>${diem.Diem_3}</td>
-            <td>${diem.ex_mark}</td>
-            <td>${diem.Diem_1 + diem.Diem_2 + diem.Diem_3 + diem.ex_mark}</td>
-          </tr>
-          `
-        }
+    console.log(sbd_input.value)
+    var ps = diem_sv.map((diem) => {
+      if (sbd_input.value == diem.sbd) {
+        return `
+        <tr class="table_row">
+          <td>${diem.sbd}</td>
+          <td>${diem.name}</td>
+          <td>${diem.id}</td>
+          <td>${diem.Khoi_thi}</td>
+          <td>${diem.Diem_1}</td>
+          <td>${diem.Diem_2}</td>
+          <td>${diem.Diem_3}</td>
+          <td>${diem.ex_mark}</td>
+          <td>${diem.Diem_1 + diem.Diem_2 + diem.Diem_3 + diem.ex_mark}</td>
+        </tr>
+        `
       }
     }).join('');
-    const mark_list = `
+    const mark_list_search = `
 <div style="display: flex; justify-content: space-between; width: 100%" id="nav">
   <div class="input-group mb-3" style="width: 300px;">
   <input type="text" class="form-control" id="search_sbd" placeholder="Nhập SBD tìm kiếm" aria-describedby="basic-addon1">
-  <button class="btn btn-primary">Tra Cứu</button>
+  <button class="btn btn-primary" onclick = search_mark_list();>Tra Cứu</button>
   </div>
   <button class="btn" onclick="window.print()" style="height: 38px">
     <i class="fas fa-print"></i>
@@ -975,8 +977,7 @@ function on_mark_list() {
 </tbody>
 </table>
 `;
-    student_table.innerHTML = mark_list;
-  }
+    student_table.innerHTML = mark_list_search;
 }
 
 function on_student_list() {
@@ -1231,12 +1232,10 @@ for (var i = 0; i < detele_btns.length; i++) {
     }
   };
 }
-
+var student_id = [...hssv.map(item => item.sbd)]
 var sbdInput = document.getElementById("search_sbd");
-sbdInput.onchange = () => {
-  if (sbdInput.value == "") {
-    return;
-  } else {
+function search_student_list(e){
+  if(e.keyCode == 13){
     if (student_id.includes(sbdInput.value) == true) {
       var ps = hssv
         .map((item, index) => {

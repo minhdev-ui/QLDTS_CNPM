@@ -1,109 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../asset/user.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../asset/print.css" />
-    <link rel="stylesheet" href="../asset/preload.css">
-    <title>Quản Lý Điểm Tuyển Sinh Đại Học MVC</title>
-  </head>
-  <body>
-    <div class="heading" id="head">
-      <div class="heading_logo">
-        <img
-          src="../img/istockphoto-1197901679-612x612.jpg"
-          class="heading_img"
-        />
-        <h1 class="heading_title">Quản Lý Điểm Tuyển Sinh Đại Học MVC</h1>
-      </div>
-      <div class="exit">
-        <a href="../index.html">
-          <i class="fas fa-sign-out-alt"></i>
-          Thoát
-        </a>
-      </div>
-    </div>
-    <div class="container">
-      <div class="form_search" id="nav">
-        <div class="search_input">
-          <label for="sbd" class="search_label">Nhập SBD</label>
-          <input type="text" id="sbd" />
-        </div>
-        <div class="btn_block">
-          <button class="btn">
-            <i class="fas fa-search"></i>
-            Tìm Kiếm
-          </button>
-          <button class="btn" onclick="window.print()">
-            <i class="fas fa-print"></i>
-            In Bảng Điểm
-          </button>
-        </div>
-      </div>
-      <table class="table mt-6" id="nofication">
-        <thead>
-          <tr>
-            <th scope="col">SBD</th>
-            <th scope="col">Họ Tên</th>
-            <th scope="col">Ngành</th>
-            <th scope="col">Khối</th>
-            <th scope="col">Điểm Môn 1</th>
-            <th scope="col">Điểm Môn 2</th>
-            <th scope="col">Điểm Môn 3</th>
-            <th scope="col">Điểm ưu tiên</th>
-            <th scope="col">Tổng Điểm</th>
-          </tr>
-        </thead>
-        <tbody id="table_list"></tbody>
-      </table>
-    </div>
-    <div id="loader-wrapper">
-      <div id="loader-section"></div>
-    </div>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/54f5e9521f.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../asset/search.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        setTimeout(function () {
-          $("body").addClass("loaded");
-        }, 1000);
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../asset/user.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../asset/print.css" />
+  <link rel="stylesheet" href="../asset/preload.css">
+  <title>Quản Lý Điểm Tuyển Sinh Đại Học MVC</title>
+</head>
+
+<body>
+  <!-- Messenger Plugin chat Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your Plugin chat code -->
+  <div id="fb-customer-chat" class="fb-customerchat">
+  </div>
+
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "107660011702800");
+    chatbox.setAttribute("attribution", "biz_inbox");
+
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v12.0'
       });
-    </script>
-  </body>
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div class="heading" id="head">
+    <div class="heading_logo">
+      <img src="../img/istockphoto-1197901679-612x612.jpg" class="heading_img" />
+      <h1 class="heading_title">Quản Lý Điểm Tuyển Sinh Đại Học MVC</h1>
+    </div>
+    <div class="exit">
+      <a href="../index.html">
+        <i class="fas fa-sign-out-alt"></i>
+        Thoát
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form_search" id="nav">
+      <div class="search_input">
+        <label for="sbd" class="search_label">Nhập SBD</label>
+        <input type="text" id="sbd" />
+      </div>
+      <div class="btn_block">
+        <button class="btn">
+          <i class="fas fa-search"></i>
+          Tìm Kiếm
+        </button>
+        <button class="btn" onclick="window.print()">
+          <i class="fas fa-print"></i>
+          In Bảng Điểm
+        </button>
+      </div>
+    </div>
+    <table class="table mt-6" id="nofication">
+      <thead>
+        <tr>
+          <th scope="col">SBD</th>
+          <th scope="col">Họ Tên</th>
+          <th scope="col">Ngành</th>
+          <th scope="col">Khối</th>
+          <th scope="col">Điểm Môn 1</th>
+          <th scope="col">Điểm Môn 2</th>
+          <th scope="col">Điểm Môn 3</th>
+          <th scope="col">Điểm ưu tiên</th>
+          <th scope="col">Tổng Điểm</th>
+        </tr>
+      </thead>
+      <tbody id="table_list"></tbody>
+    </table>
+  </div>
+  <div id="loader-wrapper">
+    <div id="loader-section"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="https://kit.fontawesome.com/54f5e9521f.js" crossorigin="anonymous"></script>
+  <script src="../asset/search.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      setTimeout(function () {
+        $("body").addClass("loaded");
+      }, 1000);
+    });
+  </script>
+</body>
+
 </html>
