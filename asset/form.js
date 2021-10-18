@@ -232,11 +232,8 @@ add_hssv.onclick = () => {
       </div>
       <div class="department">
         <label for="">Ngành</label>
-        <select class="custom-select">
+        <select class="custom-select" id="nganh_list">
           <option selected>--Chọn Ngành--</option>
-          <option value="cntt">Công Nghệ Thông Tin</option>
-          <option value="ktpm">Kĩ Thuật Phần Mềm</option>
-          <option value="httt">Hệ Thống Thông Tin</option>
         </select>
       </div>
       <div class="aria">
@@ -263,6 +260,27 @@ add_hssv.onclick = () => {
 </div>
   `
   overlay.innerHTML = ps
+  const folk = document.getElementById("folk_list");
+  const unit = document.getElementById("unit_list");
+  const ngah = document.getElementById("nganh_list");
+  const folk_list = dan_toc
+    .map(
+      (item) => `
+    <option value="${item.id}" class="folk_item">${item.name}</option>
+`
+    )
+    .join();
+  folk.innerHTML += folk_list;
+  const unit_list = khoi.map(
+    (item) => `
+    <option value="${item.id}">${item.id}</option>
+`
+  );
+  unit.innerHTML += unit_list;
+  const ngah_list = nganh.map((item) => `
+    <option value="${item.id}">${item.name}</option>
+  `).join('');
+  ngah.innerHTML += ngah_list;
   on_form();
   $(".add").click(function (event) {
     event.preventDefault();
@@ -392,6 +410,15 @@ for (var i = 0; i < edit_btns.length; i++) {
       </div>
     `
     overlay.innerHTML = ps
+    const folk = document.getElementById("folk_list");
+    const folk_list = dan_toc
+      .map(
+        (item) => `
+    <option value="${item.id}" class="folk_item">${item.name}</option>
+`
+      )
+      .join();
+    folk.innerHTML += folk_list;
     on_form();
     $(".update").click(function (event) {
       event.preventDefault();
@@ -476,23 +503,6 @@ for (var i = 0; i < detail_btn.length; i++) {
     });
   }
 }
-
-const folk = document.getElementById("folk_list");
-const unit = document.getElementById("unit_list");
-const folk_list = dan_toc
-  .map(
-    (item) => `
-    <option value="${item.id}" class="folk_item">${item.name}</option>
-`
-  )
-  .join();
-folk.innerHTML += folk_list;
-const unit_list = khoi.map(
-  (item) => `
-    <option value="${item.id}">${item.id}</option>
-`
-);
-unit.innerHTML += unit_list;
 
 
 // add controller
