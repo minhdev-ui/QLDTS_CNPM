@@ -348,32 +348,50 @@ const student_pass = [{
 const student_pass_sbd = [...student_pass.map(item => item.sbd)]
 const student_pass_id = [...student_pass.map(item => item.id)]
 const student_pass_khoithi = [...student_pass.map(item => item.Khoi_thi)]
-console.log(student_pass_id)
+const diem_sv_sbd = [...diem_sv.map(item => item.sbd)]
 
+const nofi_pass = document.getElementById('nofi_pass');
 const search_table = document.getElementById("table_list");
+const search = document.getElementById("search_btn");
 const search_sbd = document.getElementById("sbd");
-search_sbd.onchange = () => {
-  var search_list = diem_sv
-    .map((item) => {
-      if (search_sbd.value == item.sbd) {
-        return `
-            <tr class="table_row">
-            <td>${item.sbd}</td>
-            <td>${item.name}</td>
-            <td>${item.id}</td>
-            <td>${item.Khoi_thi}</td>
-            <td>${item.Diem_1}</td>
-            <td>${item.Diem_2}</td>
-            <td>${item.Diem_3}</td>
-            <td>${item.ex_mark}</td>
-            <td>${item.Diem_1 + item.Diem_2 + item.Diem_3 + item.ex_mark}</td>
-            </tr>
-            `;
+function sbdsearch(){
+  if (diem_sv_sbd.includes(search_sbd.value)){
+    var search_list = diem_sv
+      .map((item) => {
+        if (search_sbd.value == item.sbd) {
+          return `
+              <tr class="table_row">
+              <td>${item.sbd}</td>
+              <td>${item.name}</td>
+              <td>${item.id}</td>
+              <td>${item.Khoi_thi}</td>
+              <td>${item.Diem_1}</td>
+              <td>${item.Diem_2}</td>
+              <td>${item.Diem_3}</td>
+              <td>${item.ex_mark}</td>
+              <td>${item.Diem_1 + item.Diem_2 + item.Diem_3 + item.ex_mark}</td>
+              </tr>
+              `;
+        }
+      })
+      .join("");
+      search_table.innerHTML = search_list;
+      if(student_pass_sbd.includes(search_sbd.value)){
+        var message_success = `
+          <p>
+            Bạn đã trúng tuyển vào ngành ${student_pass_id[student_pass_sbd.indexOf(search_sbd.value)] + ' khối ' + student_pass_khoithi[student_pass_sbd.indexOf(search_sbd.value)]} của Trường Đại Học MVC.
+          </p>
+        `
+        nofi_pass.innerHTML = message_success;
+      }else {
+        var message_success = `
+        <p>
+          Bạn đã trượt toàn bộ nguyện vọng tại Trường Đại Học MVC.
+        </p>
+      `
+        nofi_pass.innerHTML = message_success;
       }
-    })
-    .join("");
-  search_table.innerHTML = search_list;
-  if(student_pass_sbd.includes(search_sbd.value)){
-    alert('Bạn đã trúng tuyển vào ngành ' + student_pass_id[student_pass_sbd.indexOf(search_sbd.value)] + ' khối ' + student_pass_khoithi[student_pass_sbd.indexOf(search_sbd.value)])
+  }else{
+    alert("Không có thí sinh mang số báo danh " + search_sbd.value);
   }
 };
